@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ocpic</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>OCPiC</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <!-- Sets initial viewport load and disables zooming  -->
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
-  <body>
-    <%= yield %>
-  </body>
+  <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <%= favicon_link_tag "mb-icon-#{Rails.env}.png", rel: 'apple-touch-icon', type: 'image/png' %>
+</head>
+<body>
+
+<header class="bar bar-nav">
+  <a class="icon icon-refresh pull-right"></a>
+  <h1 class="title">OCPiC</h1>
+</header>
+
+<div class="bar bar-footer">
+  <table width="100%">
+    <tr>
+      <td class="bar-footer-tab-active"><a href="#"><%= image_tag("home.png", class: "tab-icon", size: "40") %></a></td>
+      <td class="bar-footer-tab"><a href="#"><%= image_tag("camera.png", class: "tab-icon", size: "40") %></a></td>
+      <td class="bar-footer-tab"><a href="#"><%= image_tag("sensors.png", class: "tab-icon", size: "40") %></a></td>
+      <td class="bar-footer-tab"><a href="#"><%= image_tag("photos.png", class: "tab-icon", size: "40") %></a></td>
+      <td class="bar-footer-tab"><a href="#"><%= image_tag("settings.png", class: "tab-icon", size: "40") %></a></td>
+    </tr>
+  </table>
+</div>
+
+<div class="content">
+  <%= yield %>
+</div><!-- /.content -->
+
+</body>
 </html>
