@@ -524,6 +524,7 @@ input[type="button"] {
 
 .bar-nav {
   top: 0;
+  background-color: #428bca;
 }
 
 .bar-footer-tab {
@@ -547,7 +548,7 @@ input[type="button"] {
   font-size: 17px;
   font-weight: 500;
   line-height: 44px;
-  color: #000;
+  color: #FFF;
   text-align: center;
   white-space: nowrap;
 }
@@ -1281,7 +1282,7 @@ select {
   font-size: 24px;
   line-height: 1;
   text-decoration: none;
-
+  color: #FFF;
   -webkit-font-smoothing: antialiased;
 }
 

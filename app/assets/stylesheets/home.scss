@@ -1,3 +1,25 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.home_image {
+  text-align: center;
+}
+
+.home_ocpic {
+  text-align: center;
+  font-size: 40px;
+  color: rgba(76, 85, 135, 0.87);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 50px;
+}
+
+.shutdown_pi_header {
+  color: #d9534f;
+}
+
+.shutdown_button_cell {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}

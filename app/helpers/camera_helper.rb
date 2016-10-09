@@ -1,0 +1,2 @@
+module CameraHelper
+end

@@ -1,46 +1,55 @@
+<p class="home_ocpic"><b>O</b>utdoor <b>C</b>amera <b>Pi</b> <b>C</b>ontroller</p>
+
+<table width="100%">
+  <tr>
+    <td class="home_image"><%= link_to image_tag('home_camera_active.png', width: 75), camera_index_path, class: 'home_main_image' %></td>
+    <td class="home_image"><%= link_to image_tag('home_pi_active.png', width: 75), pi_index_path, class: 'home_main_image' %></td>
+    <td class="home_image"><%= link_to image_tag('home_sensors_active.png', width: 75), sensors_index_path, class: 'home_main_image' %></td>
+  </tr>
+</table>
+
+<h5 class="content-padded" xmlns="http://www.w3.org/1999/html">Program:</h5>
 <ul class="table-view">
   <li class="table-view-cell media">
-    <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-      <span class="media-object icon icon-pages pull-left"></span>
+    <a class="navigate-right">
       <div class="media-body">
-        All inboxxes
+        Timelapse
       </div>
     </a>
   </li>
   <li class="table-view-cell media">
-    <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-      <span class="media-object icon icon-person pull-left"></span>
+    <a class="navigate-right">
       <div class="media-body">
-        Personal email
+        Running 5 minutes
       </div>
     </a>
   </li>
   <li class="table-view-cell media">
-    <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-      <span class="media-object icon icon-star-filled pull-left"></span>
+    <a class="navigate-right">
       <div class="media-body">
-        Starred
-      </div>
-    </a>
-  </li>
-  <li class="table-view-cell media">
-    <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-      <span class="media-object icon icon-trash pull-left"></span>
-      <div class="media-body">
-        Trash
+        15 Photos taken
       </div>
     </a>
   </li>
 </ul>
 
-<h5 class="content-padded">Other accounts</h5>
-<ul class="table-view">
-  <li class="table-view-cell media">
-    <a class="navigate-right" href="inbox.html" data-transition="slide-in">
-      <span class="media-object icon icon-more pull-left"></span>
-      <div class="media-body">
-        Misc
-      </div>
-    </a>
-  </li>
-</ul>
+<a href="#shutdown_pi" class="btn btn-negative btn-outlined">Shutdown Pi</a>
+<div id="shutdown_pi" class="modal">
+  <header class="bar bar-nav">
+    <a class="icon icon-close pull-right" href="#shutdown_pi"></a>
+    <h1 class="title">Shutdown Pi</h1>
+  </header>
+
+  <div class="content">
+    <p>Are you sure you want to Shutdown the Pi ?</p>
+    <%= form_tag("/home/shutdown_pi", method: "post") do %>
+      <table width="100%">
+        <tr>
+          <td class="shutdown_button_cell"><%= link_to("Cancel", root_path, class: "btn btn-block") %></td>
+          <td class="shutdown_button_cell"><%= link_to("Shutdown", home_shutdown_pi_path, class: "btn btn-negative btn-block") %></td>
+        </tr>
+      </table>
+
+    <% end %>
+  </div>
+</div>

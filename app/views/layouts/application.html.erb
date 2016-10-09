@@ -18,25 +18,25 @@
 <body>
 
 <header class="bar bar-nav">
-  <a class="icon icon-refresh pull-right"></a>
+  <%= link_to "", reload_path, class: "icon icon-refresh pull-right" %>
   <h1 class="title">OCPiC</h1>
 </header>
 
 <div class="bar bar-footer">
   <table width="100%">
     <tr>
-      <td class="bar-footer-tab-active"><a href="#"><%= image_tag("home.png", class: "tab-icon", size: "40") %></a></td>
-      <td class="bar-footer-tab"><a href="#"><%= image_tag("camera.png", class: "tab-icon", size: "40") %></a></td>
-      <td class="bar-footer-tab"><a href="#"><%= image_tag("sensors.png", class: "tab-icon", size: "40") %></a></td>
-      <td class="bar-footer-tab"><a href="#"><%= image_tag("photos.png", class: "tab-icon", size: "40") %></a></td>
-      <td class="bar-footer-tab"><a href="#"><%= image_tag("settings.png", class: "tab-icon", size: "40") %></a></td>
+      <%= footer_table_cell("home") %>
+      <%= footer_table_cell("camera") %>
+      <%= footer_table_cell("sensors") %>
+      <%= footer_table_cell("photos") %>
+      <%= footer_table_cell("settings") %>
     </tr>
   </table>
 </div>
 
 <div class="content">
   <%= yield %>
-</div><!-- /.content -->
+</div>
 
 </body>
 </html>
