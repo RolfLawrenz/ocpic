@@ -1,0 +1,20 @@
+<a href="#shutdown_pi" class="btn btn-negative btn-outlined">Shutdown Pi</a>
+<div id="shutdown_pi" class="modal">
+  <header class="bar bar-nav">
+    <a class="icon icon-close pull-right" href="#shutdown_pi"></a>
+    <h1 class="title">Shutdown Pi</h1>
+  </header>
+
+  <div class="content">
+    <p>Are you sure you want to Shutdown the Pi ?</p>
+    <%= form_tag("/home/shutdown_pi", method: "post") do %>
+      <table width="100%">
+        <tr>
+          <td class="shutdown_button_cell"><%= link_to("Cancel", root_path, class: "btn btn-block") %></td>
+          <td class="shutdown_button_cell"><%= link_to("Shutdown", home_shutdown_pi_path, class: "btn btn-negative btn-block") %></td>
+        </tr>
+      </table>
+
+    <% end %>
+  </div>
+</div>

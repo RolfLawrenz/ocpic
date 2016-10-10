@@ -1,2 +1,10 @@
-<h1>Pi#index</h1>
-<p>Find me in app/views/pi/index.html.erb</p>
+<table class="table-splitview">
+  <% @current_status.keys.each do |key| %>
+    <tr class="table-splitview-header"><td><%= key %></td><td>&nbsp;</td></tr>
+    <% @current_status[key].keys.each do |field| %>
+      <tr><td class="table-splitview-label-cell"><%= field %></td><td class="table-splitview-value-cell"><%= @current_status[key][field] %></td></tr>
+    <% end %>
+  <% end %>
+</table>
+
+<%= render "shared/shutdown_pi_btn" %>

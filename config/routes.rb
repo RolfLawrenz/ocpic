@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'program/index'
+
   get 'settings/index'
 
   get 'photos/index'

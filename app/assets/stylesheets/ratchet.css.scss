@@ -834,6 +834,44 @@ input[type="button"] {
   margin-top: 15px;
 }
 
+.table-splitview {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 15px;
+  list-style: none;
+  background-color: #fff;
+  //border-top: 1px solid #ddd;
+  //border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.table-splitview-header {
+  font-weight: 800;
+  color: #999;
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-splitview-header > td {
+  padding-left: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.table-splitview-label-cell {
+  font-weight: 500;
+  width: 40%;
+  border-bottom: 1px solid #ddd;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+}
+
+.table-splitview-value-cell {
+  border-bottom: 1px solid #ddd;
+}
+
 input,
 textarea,
 button,
