@@ -1,2 +1,40 @@
-<h1>Program#index</h1>
-<p>Find me in app/views/program/index.html.erb</p>
+<%= form_tag id:'program_form', :controller => 'program', :action => 'index', :method => 'get' do %>
+  <div class="input-row">
+    <%= label_tag(:program_name, "Program") %>
+    <%= select_tag(:program_name, options_for_select(@program_select, @program_name)) %>
+  </div>
+  <div class="input-row">
+    &nbsp;
+  </div>
+  <div id="timelapse_settings">
+    <h3 class="table-view-divider">Timelapse Settings</h3>
+    <div class="input-row">
+      <%= label_tag(:interval, "Interval(s)") %>
+      <%= number_field_tag(:interval, @interval_value, min: 1) %>
+    </div>
+    <div class="input-row">
+      <%= label_tag(:timelapse_mode, "Mode") %>
+      <%= select_tag(:timelapse_mode, options_for_select(@timelapse_mode_select, @timelapse_mode_value)) %>
+    </div>
+  </div>
+
+  <div id="sensor_settings">
+    <h3 class="table-view-divider" >Sensors Settings</h3>
+    <ul class="table-view">
+      <li class="table-view-cell">
+        <b>Proximity Sensor</b>
+        <div id='sensor_proximity' class="toggle<%= @sensor_proximity_value == "1" ? ' active' : ''%>">
+          <div class="toggle-handle"></div>
+        </div>
+      </li>
+      <li class="table-view-cell">
+        <b>Vibration Sensor</b>
+        <div id='sensor_vibration' class="toggle<%= @sensor_vibration_value == "1" ? ' active' : ''%>">
+          <div class="toggle-handle"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<% end %>
+

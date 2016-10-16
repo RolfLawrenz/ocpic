@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'program/index'
+  match 'program/index', to: 'program#index', via: [:get, :post]
+  post 'program/update'
 
   get 'settings/index'
 

@@ -860,7 +860,7 @@ input[type="button"] {
 }
 
 .table-splitview-label-cell {
-  font-weight: 500;
+  font-weight: 700;
   width: 40%;
   border-bottom: 1px solid #ddd;
   padding-top: 5px;
@@ -961,6 +961,7 @@ select {
   padding: 8px 15px;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.1;
+  font-weight: 700;
 }
 
 .input-row input {
@@ -969,6 +970,22 @@ select {
   padding-left: 0;
   margin-bottom: 0;
   border: 0;
+}
+
+.input-row label + select {
+  float: right;
+  width: 65%;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+
+  font:inherit; /*keep font style*/
+  height:35px; /*force same height as inputs*/
+
+  /* remove border, background and inset shadow */
+  border:none;
+  background-color:transparent;
+  box-shadow:none;
 }
 
 .segmented-control {
