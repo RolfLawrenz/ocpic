@@ -11,28 +11,34 @@ class ProgramController < ApplicationController
   }
 
   def index
-
-    @program_name = find_or_create_setting_value(Setting::NAME_CURR_PROGRAM_NAME, 'timelapse')
+    @program_name = ProgramController.find_or_create_setting_value(Setting::NAME_CURR_PROGRAM_NAME, 'timelapse')
     @program_select = []
     PROGRAM_NAMES.each do |k,v|
       @program_select << [v, k]
     end
 
-    @timelapse_mode_value = find_or_create_setting_value(Setting::NAME_TIMELAPSE_MODE, 'landscape')
+    @timelapse_mode_value = ProgramController.find_or_create_setting_value(Setting::NAME_TIMELAPSE_MODE, 'landscape')
     @timelapse_mode_select = []
     TIMELAPSE_MODES.each do |k,v|
       @timelapse_mode_select << [v, k]
     end
 
-    @interval_value = find_or_create_setting_value(Setting::NAME_INTERVAL, '10')
+    @interval_value = ProgramController.find_or_create_setting_value(Setting::NAME_INTERVAL, '10')
 
-    @sensor_proximity_value = find_or_create_setting_value(Setting::NAME_SENSOR_PROXIMITY, "1")
-    @sensor_vibration_value = find_or_create_setting_value(Setting::NAME_SENSOR_VIBRATION, "1")
+    @sensor_proximity_value = ProgramController.find_or_create_setting_value(Setting::NAME_SENSOR_PROXIMITY, "1")
+    @sensor_vibration_value = ProgramController.find_or_create_setting_value(Setting::NAME_SENSOR_VIBRATION, "1")
+
+    program_manager = Program::ProgramManager.new
+    @running_time = program_manager.current_program.running_time_text
+    @photo_count = program_manager.current_program.photo_count
+    @start_stop_text = program_manager.current_program.running? ? 'Stop' : 'Start'
+
+    puts "PROGRAM running?=#{program_manager.current_program.running?}"
 
     render :index
   end
 
-  def find_or_create_setting_value(db_name, default_value)
+  def self.find_or_create_setting_value(db_name, default_value)
     setting = Setting.where(name: db_name).first
     if setting.nil?
       setting = Setting.create(name: db_name, value: default_value)
@@ -40,6 +46,16 @@ class ProgramController < ApplicationController
     setting.value
   end
 
+  def start_stop_program
+    puts "START STOP"
+    program_manager = Program::ProgramManager.new
+
+    program_manager.current_program.toggle_start_stop
+
+    redirect_to url_for(controller: :program, action: :index)
+  end
+
+  # AJAX methods called when controls hit
   def update
     save_setting('program_name', Setting::NAME_CURR_PROGRAM_NAME)
     save_setting('timelapse_mode', Setting::NAME_TIMELAPSE_MODE)
@@ -49,6 +65,8 @@ class ProgramController < ApplicationController
 
     head :ok
   end
+
+  private
 
   def save_setting(param_name, db_name)
     save_setting_with(param_name, db_name, params[param_name])

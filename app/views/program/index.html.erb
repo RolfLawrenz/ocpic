@@ -1,11 +1,22 @@
 <%= form_tag id:'program_form', :controller => 'program', :action => 'index', :method => 'get' do %>
   <div class="input-row">
     <%= label_tag(:program_name, "Program") %>
-    <%= select_tag(:program_name, options_for_select(@program_select, @program_name)) %>
+    <%= select_tag(:program_name, options_for_select(@program_select, @program_name),
+                   disabled: (@start_stop_text == 'Stop') ? true : false,
+                   class: (@start_stop_text == 'Stop') ? 'select_disabled' : '')%>
   </div>
   <div class="input-row">
-    &nbsp;
+    <%= label_tag(:status, "Running") %>
+    <%= text_field_tag(:status, @running_time, disabled: true) %>
   </div>
+  <div class="input-row">
+    <%= label_tag(:photo_count, "Photos") %>
+    <%= number_field_tag(:photo_count, @photo_count, disabled: true) %>
+  </div>
+  <br/>
+  <%= render "shared/program_start_stop_btn" %>
+  <br/>
+
   <div id="timelapse_settings">
     <h3 class="table-view-divider">Timelapse Settings</h3>
     <div class="input-row">

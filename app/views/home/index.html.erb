@@ -13,21 +13,21 @@
   <li class="table-view-cell media">
     <%= link_to(program_index_path, class: "navigate-right") do %>
       <div class="media-body">
-        Timelapse
+        <%= @program_name %>
       </div>
     <% end %>
   </li>
   <li class="table-view-cell media">
     <%= link_to(program_index_path, class: "navigate-right") do %>
       <div class="media-body">
-        Running 5 minutes
+        <%= @running_time %>
       </div>
     <% end %>
   </li>
   <li class="table-view-cell media">
     <%= link_to(photos_index_path, class: "navigate-right") do %>
       <div class="media-body">
-        15 Photos taken
+        <%= @photo_count %> Photos taken
       </div>
     <% end %>
   </li>

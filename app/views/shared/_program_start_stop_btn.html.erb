@@ -1,0 +1,20 @@
+<a href="#prog_start_stop" class="btn btn-negative btn-outlined action_btn"><%= @start_stop_text %></a>
+<div id="prog_start_stop" class="modal">
+  <header class="bar bar-nav">
+    <a class="icon icon-close pull-right" href="#shutdown_pi"></a>
+    <h1 class="title"><%= @start_stop_text %></h1>
+  </header>
+
+  <div class="content">
+    <p>Are you sure you want to <%= @start_stop_text %> <%= @program_name.titleize %> Program ?</p>
+    <%= form_tag("/program/start_stop_program", method: "post") do %>
+      <table width="100%">
+        <tr>
+          <td class="shutdown_button_cell"><%= link_to("Cancel", program_index_path, class: "btn btn-block") %></td>
+          <td class="shutdown_button_cell"><%= link_to(@start_stop_text, program_start_stop_program_path, class: "btn btn-negative btn-block") %></td>
+        </tr>
+      </table>
+
+    <% end %>
+  </div>
+</div>

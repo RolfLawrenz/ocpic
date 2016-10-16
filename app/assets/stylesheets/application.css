@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.action_btn {
+    margin-left: 10px;
+}
+
+.select_disabled {
+    color: #ccc;
+}
