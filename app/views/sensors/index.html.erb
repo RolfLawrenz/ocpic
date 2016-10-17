@@ -1,2 +1,26 @@
-<h1>Sensors#index</h1>
-<p>Find me in app/views/sensors/index.html.erb</p>
+<%= form_tag id:'sensors_form', :controller => 'sensors', :action => 'index', :method => 'get' do %>
+  <h3 class="table-view-divider">Input Sensors</h3>
+  <ul class="table-view">
+    <li class="table-view-cell">
+      <b>Proximity Sensor</b>
+      <span id="proximity_count_value" class="badge badge-primary"><%= @proximity_count %></span>
+    </li>
+    <li class="table-view-cell">
+      <b>Vibration Sensor</b>
+      <span id="vibration_count_value" class="badge badge-primary"><%= @vibration_count %></span>
+    </li>
+  </ul>
+
+  <h3 class="table-view-divider">Outputs</h3>
+  <ul class="table-view">
+    <li class="table-view-cell">
+      <b>LED</b>
+      <div id='sensor_led' class="toggle<%= @sensor_led_value == "1" ? ' active' : ''%>">
+        <div class="toggle-handle"></div>
+      </div>
+    </li>
+  </ul>
+<% end %>
+<br/>
+<%= link_to('POLL', '#', id:'sensors_poll_btn', class: "btn btn-positive btn-outlined action_btn") %>
+<p id="poll_message">Press the Poll button to check if sensors are working. It will poll every couple seconds for a minute.</p>

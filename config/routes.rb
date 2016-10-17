@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'photos/index'
 
   get 'sensors/index'
+  get 'sensors/poll_update'
 
   get 'camera/index'
 
