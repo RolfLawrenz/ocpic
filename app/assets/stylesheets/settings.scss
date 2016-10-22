@@ -1,3 +1,24 @@
 // Place all the styles related to the settings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.label_setting {
+  width: 50% !important
+}
+
+.setting_field {
+  width: 50% !important
+}
+
+.setting_text_field {
+  border: 1px solid #ddd !important;
+}
+
+.setting_select_field {
+  border: 1px solid #ddd !important;
+  background-color: #eee !important;
+}
+
+input:disabled {
+  opacity: 0.5 !important;
+}

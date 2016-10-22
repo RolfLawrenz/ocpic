@@ -1,7 +1,7 @@
 module Sensors
   class SensorsManager
 
-    attr_accessor :sensor_counts
+    attr_accessor :_instance, :sensor_counts
 
     PROXIMITY_SENSOR = 'proximity'
     VIBRATION_SENSOR = 'vibration'
@@ -9,8 +9,6 @@ module Sensors
         PROXIMITY_SENSOR,
         VIBRATION_SENSOR
     ]
-
-    attr_accessor :_instance
 
     def self.instance
       unless @_instance

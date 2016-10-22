@@ -1,2 +1,11 @@
-<h1>Camera#index</h1>
-<p>Find me in app/views/camera/index.html.erb</p>
+<%= form_tag id:'camera_form', :controller => 'camera', :action => 'index', :method => 'get' do %>
+  <% @all_settings.sort_by{|s| s[:name]}.each do |menu| %>
+    <h3 class="table-view-divider"><%= menu[:name] %></h3>
+    <% menu[:fields].sort_by{|f| f[:name]}.each do |field| %>
+      <div class="input-row">
+        <%= camera_label_field(field) %>
+        <%= camera_setting_field(field) %>
+      </div>
+      <% end %>
+    <% end %>
+<% end %>

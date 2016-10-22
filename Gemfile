@@ -12,6 +12,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 # gem 'turbolinks', '~> 5'
 
+gem 'ffi', '~> 1.9', '>= 1.9.10'
+gem 'ffi-gphoto2', '~> 0.5.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

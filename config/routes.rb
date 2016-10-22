@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'sensors/poll_update'
 
   get 'camera/index'
+  post 'camera/update'
 
   get 'pi/index'
 
