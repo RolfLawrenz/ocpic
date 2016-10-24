@@ -17,4 +17,10 @@ module ApplicationHelper
     request.original_url + query
   end
 
+  def back_path
+    if @back_path
+      link_to "", @back_path, class: "icon icon-left-nav pull-left"
+    end
+  end
+
 end

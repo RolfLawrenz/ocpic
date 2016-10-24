@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'program/start_stop_program'
 
   get 'settings/index'
+  get 'settings/timelapse_mode'
+  post 'settings/update'
 
   get 'photos/index'
 

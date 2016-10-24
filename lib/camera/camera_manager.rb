@@ -12,7 +12,7 @@ module Camera
 
     def initialize
       @camera = ::Camera::Camera.new
-      @camera.show_all_settings
+      # @camera.show_all_settings
     end
 
     def connected?
@@ -20,10 +20,6 @@ module Camera
       # Try connect again
       @camera = ::Camera::Camera.new
       return @camera.camera_connected?
-    end
-
-    def current_settings
-      @camera.show_all_settings
     end
 
   end

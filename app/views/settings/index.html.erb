@@ -1,2 +1,12 @@
-<h1>Settings#index</h1>
-<p>Find me in app/views/settings/index.html.erb</p>
+<h5 class="content-padded">Timelapse Settings</h5>
+<ul class="table-view">
+  <% @timelapse_modes.each do |mode| %>
+  <li class="table-view-cell media">
+    <%= link_to(settings_timelapse_mode_path(shooting_mode: mode), class: "navigate-right") do %>
+      <div class="media-body">
+        <%= mode %>
+      </div>
+    <% end %>
+  </li>
+  <% end %>
+</ul>

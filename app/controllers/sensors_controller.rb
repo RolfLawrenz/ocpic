@@ -7,7 +7,6 @@ class SensorsController < ApplicationController
   end
 
   def poll_update
-    puts "POLL_UPDATE"
     @proximity_count = Sensors::SensorsManager.instance.sensor_count(Sensors::SensorsManager::PROXIMITY_SENSOR)
     @vibration_count = Sensors::SensorsManager.instance.sensor_count(Sensors::SensorsManager::VIBRATION_SENSOR)
 

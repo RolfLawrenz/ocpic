@@ -86,6 +86,20 @@ module Camera
       settings
     end
 
+    def selected_settings(setting_names)
+      selected = []
+      all_settings.each do |menu|
+        menu[:fields].each do |field|
+          selected << field if setting_names.include?(field[:name])
+        end
+      end
+      selected
+    end
+
+    def selected_setting(setting_name)
+      selected_settings([setting_name])[0]
+    end
+
     def camera_connected?
       puts "____ CONNECTED=#{@camera.present?} _____"
       @camera.present?
