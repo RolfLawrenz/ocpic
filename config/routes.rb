@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'settings/index'
   get 'settings/timelapse_mode'
+  get 'settings/timelapse_start'
+  get 'settings/sensors_start'
   post 'settings/update'
 
   get 'photos/index'

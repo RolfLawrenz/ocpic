@@ -1,0 +1,1276 @@
+main
+  actions
+    autofocusdrive
+      type: toggle
+      value: false
+    manualfocusdrive
+      type: range
+      value: 0.0
+      options: -32767.0..32767.0:step(1.0)
+    changeafarea
+      type: text
+      value: 0x0
+    controlmode
+      type: text
+      value: 0
+    viewfinder
+      type: toggle
+      value: false
+  settings
+    datetime
+      type: date
+      value: 2016-10-24 03:47:28 UTC
+    imagecomment
+      type: text
+      value:
+    imagecommentenable
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    recordingmedia
+      type: radio
+      value: Card
+      options: ["Card", "SDRAM"]
+    reversedial
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    artist
+      type: text
+      value:
+    ccdnumber
+      type: text
+      value:
+    copyright
+      type: text
+      value:
+    menusandplayback
+      type: radio
+      value: Off
+      options: ["Off", "On"]
+    fastfs
+      type: toggle
+      value: true
+    capturetarget
+      type: radio
+      value: Memory card
+      options: ["Internal RAM", "Memory card"]
+  status
+    serialnumber
+      type: text
+      value: 8016209
+    manufacturer
+      type: text
+      value: Nikon Corporation
+    cameramodel
+      type: text
+      value: D300S
+    deviceversion
+      type: text
+      value: V1.01
+    vendorextension
+      type: text
+      value: microsoft.com: 1.0
+    acpower
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    externalflash
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    batterylevel
+      type: text
+      value: 100%
+    orientation
+      type: radio
+      value: 0'
+      options: ["0'", "270'", "90'", "180'"]
+    orientation2
+      type: text
+      value: 360'
+    flashopen
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    flashcharged
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    minfocallength
+      type: text
+      value: 20 mm
+    maxfocallength
+      type: text
+      value: 35 mm
+    apertureatminfocallength
+      type: text
+      value: 3
+    apertureatmaxfocallength
+      type: text
+      value: 3
+    lowlight
+      type: range
+      value: 1.0
+      options: 0.0..8.0:step(1.0)
+    lightmeter
+      type: range
+      value: -4.0
+      options: -60.0..60.0:step(1.0)
+    aflocked
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    aelocked
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    fvlocked
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+  imgsettings
+    imagesize
+      type: radio
+      value: 4288x2848
+      options: ["4288x2848", "3216x2136", "2144x1424"]
+    iso
+      type: radio
+      value: 400
+      options: ["100", "125", "160", "200", "250", "320", "400", "500", "640", "800", "1000", "1250", "1600", "2000", "2500", "3200", "4000", "5000", "6400"]
+    whitebalance
+      type: radio
+      value: Cloudy
+      options: ["Automatic", "Daylight", "Fluorescent", "Tungsten", "Flash", "Cloudy", "Shade", "Color Temperature", "Preset"]
+    colorspace
+      type: radio
+      value: sRGB
+      options: ["sRGB", "AdobeRGB"]
+    autoiso
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+  capturesettings
+    minimumshutterspeed
+      type: radio
+      value: 1/100
+      options: ["1/2000", "1/1600", "1/1250", "1/1000", "1/800", "1/640", "1/500", "1/400", "1/320", "1/250", "1/200", "1/160", "1/125", "1/100", "1/80", "1/60", "1/50", "1/40", "1/30", "1/15", "1/8", "1/4", "1/2", "1", "Unknown value 0018", "Unknown value 0019", "Unknown value 001a"]
+    isoautohilimit
+      type: radio
+      value: 1600
+      options: ["400", "800", "1600", "3200", "Hi 1"]
+    dlighting
+      type: radio
+      value: Normal
+      options: ["Extra high", "High", "Normal", "Low", "Off", "Auto"]
+    highisonr
+      type: radio
+      value: Off
+      options: ["Off", "Low", "Normal", "High"]
+    shootingspeed
+      type: radio
+      value: 4 fps
+      options: ["4 fps", "3 fps", "2 fps", "1 fps", "Unknown value 0004", "Unknown value 0005", "Unknown value 0006"]
+    maximumcontinousrelease
+      type: range
+      value: 100.0
+      options: 1.0..100.0:step(1.0)
+    moviequality
+      type: radio
+      value: 640x424
+      options: ["320x216", "640x424", "1280x720"]
+    rawcompression
+      type: radio
+      value: Lossless
+      options: ["Lossless", "Lossy", "Unknown value 0002"]
+    flashsyncspeed
+      type: radio
+      value: 1/250s (Auto FP)
+      options: ["1/250s (Auto FP)", "1/250s", "1/200s", "1/160s", "1/125s", "1/100s", "1/80s", "1/60s", "Unknown value 0008"]
+    flashshutterspeed
+      type: radio
+      value: 1/60s
+      options: ["1/60s", "1/30s", "1/15s", "1/8s", "1/4s", "1/2s", "1s", "2s", "4s", "8s", "15s", "30s"]
+    longexpnr
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    autofocusmode2
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    assistlight
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    exposurecompensation
+      type: radio
+      value: 0
+      options: ["-5", "-4.666", "-4.333", "-4", "-3.666", "-3.333", "-3", "-2.666", "-2.333", "-2", "-1.666", "-1.333", "-1", "-0.666", "-0.333", "0", "0.333", "0.666", "1", "1.333", "1.666", "2", "2.333", "2.666", "3", "3.333", "3.666", "4", "4.333", "4.666", "5"]
+    exposurecompensation2
+      type: radio
+      value: On
+      options: ["On", "Off"]
+    flashmode
+      type: radio
+      value: Auto
+      options: ["Red-eye automatic", "Auto", "Auto Slow Sync", "Rear Curtain Sync + Slow Sync", "Red-eye Reduction + Slow Sync"]
+    nikonflashmode
+      type: radio
+      value: iTTL
+      options: ["iTTL", "Manual", "Commander", "Repeating"]
+    flashcommandchannel
+      type: radio
+      value: 1
+      options: ["1", "2", "3", "4"]
+    flashcommandselfmode
+      type: radio
+      value: TTL
+      options: ["TTL", "Manual", "Off"]
+    flashcommandselfcompensation
+      type: radio
+      value: 0.0
+      options: ["-3.0", "-2.7", "-2.3", "-2.0", "-1.7", "-1.3", "-1.0", "-0.7", "-0.3", "0.0", "0.3", "0.7", "1.0", "1.3", "1.7", "2.0", "2.3", "2.7", "3.0"]
+    flashcommandselfvalue
+      type: radio
+      value: Full
+      options: ["Full", "1/1.3", "1/1.7", "1/2", "1/2.5", "1/3.2", "1/4", "1/5", "1/6.4", "1/8", "1/10", "1/13", "1/16", "1/20", "1/25", "1/32", "1/40", "1/50", "1/64", "1/80", "1/100", "1/128"]
+    flashcommandamode
+      type: radio
+      value: TTL
+      options: ["TTL", "Auto Aperture", "Manual", "Off"]
+    flashcommandacompensation
+      type: radio
+      value: 0.0
+      options: ["-3.0", "-2.7", "-2.3", "-2.0", "-1.7", "-1.3", "-1.0", "-0.7", "-0.3", "0.0", "0.3", "0.7", "1.0", "1.3", "1.7", "2.0", "2.3", "2.7", "3.0"]
+    flashcommandavalue
+      type: radio
+      value: Full
+      options: ["Full", "1/1.3", "1/1.7", "1/2", "1/2.5", "1/3.2", "1/4", "1/5", "1/6.4", "1/8", "1/10", "1/13", "1/16", "1/20", "1/25", "1/32", "1/40", "1/50", "1/64", "1/80", "1/100", "1/128"]
+    flashcommandbmode
+      type: radio
+      value: TTL
+      options: ["TTL", "Auto Aperture", "Manual", "Off"]
+    flashcommandbcompensation
+      type: radio
+      value: 0.0
+      options: ["-3.0", "-2.7", "-2.3", "-2.0", "-1.7", "-1.3", "-1.0", "-0.7", "-0.3", "0.0", "0.3", "0.7", "1.0", "1.3", "1.7", "2.0", "2.3", "2.7", "3.0"]
+    flashcommandbvalue
+      type: radio
+      value: Full
+      options: ["Full", "1/1.3", "1/1.7", "1/2", "1/2.5", "1/3.2", "1/4", "1/5", "1/6.4", "1/8", "1/10", "1/13", "1/16", "1/20", "1/25", "1/32", "1/40", "1/50", "1/64", "1/80", "1/100", "1/128"]
+    af-area-illumination
+      type: radio
+      value: Off
+      options: ["Auto", "Off", "On"]
+    afbeep
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    f-number
+      type: radio
+      value: f/9
+      options: ["f/2.8", "f/3.2", "f/3.5", "f/4", "f/4.5", "f/5", "f/5.6", "f/6.3", "f/7.1", "f/8", "f/9", "f/10", "f/11", "f/13", "f/14", "f/16", "f/18", "f/20", "f/22"]
+    flexibleprogram
+      type: range
+      value: 0.0
+      options: -30.0..30.0:step(2.0)
+    imagequality
+      type: radio
+      value: NEF (Raw)
+      options: ["JPEG Basic", "JPEG Normal", "JPEG Fine", "Unknown value 0003", "NEF (Raw)", "NEF+Basic", "NEF+Normal", "NEF+Fine"]
+    focallength
+      type: range
+      value: 26.0
+      options: 20.0..34.99999966472387:step(0.009999999776482582)
+    focusmode
+      type: radio
+      value: AF-C
+      options: ["Manual", "AF-S", "AF-C"]
+    expprogram
+      type: radio
+      value: A
+      options: ["M", "P", "A", "S"]
+    capturemode
+      type: radio
+      value: Single Shot
+      options: ["Single Shot", "Burst", "Continuous Low Speed", "Timer", "Mirror Up", "Quiet Release"]
+    focusmetermode
+      type: radio
+      value: Closest Subject
+      options: ["Multi-spot", "Single Area", "Closest Subject"]
+    exposuremetermode
+      type: radio
+      value: Multi Spot
+      options: ["Center Weighted", "Multi Spot", "Center Spot"]
+    shutterspeed
+      type: radio
+      value: 30.0000s
+      options: ["0.0001s", "0.0002s", "0.0003s", "0.0004s", "0.0005s", "0.0006s", "0.0008s", "0.0010s", "0.0012s", "0.0015s", "0.0020s", "0.0025s", "0.0031s", "0.0040s", "0.0050s", "0.0062s", "0.0080s", "0.0100s", "0.0125s", "0.0166s", "0.0200s", "0.0250s", "0.0333s", "0.0400s", "0.0500s", "0.0666s", "0.0769s", "0.1000s", "0.1250s", "0.1666s", "0.2000s", "0.2500s", "0.3333s", "0.4000s", "0.5000s", "0.6250s", "0.7692s", "1.0000s", "1.3000s", "1.6000s", "2.0000s", "2.5000s", "3.0000s", "4.0000s", "5.0000s", "6.0000s", "8.0000s", "10.0000s", "13.0000s", "15.0000s", "20.0000s", "25.0000s", "30.0000s"]
+    shutterspeed2
+      type: radio
+      value: 30
+      options: ["1/8000", "1/6400", "1/5000", "1/4000", "1/3200", "1/2500", "1/2000", "1/1600", "1/1250", "1/1000", "1/800", "1/640", "1/500", "1/400", "1/320", "1/250", "1/200", "1/160", "1/125", "1/100", "1/80", "1/60", "1/50", "1/40", "1/30", "1/25", "1/20", "1/15", "1/13", "1/10", "1/8", "1/6", "1/5", "1/4", "1/3", "10/25", "1/2", "10/16", "10/13", "1", "13/10", "16/10", "2", "25/10", "3", "4", "5", "6", "8", "10", "13", "15", "20", "25", "30"]
+    focusareawrap
+      type: radio
+      value: On
+      options: ["On", "Off"]
+    exposuredelaymode
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    exposurelock
+      type: radio
+      value: On
+      options: ["On", "Off"]
+    aelaflmode
+      type: radio
+      value: AF Lock Hold
+      options: ["AE/AF Lock", "AE Lock only", "AF Lock Only", "AF Lock Hold", "AF On", "Flash Level Lock", "Unknown value 0006", "Unknown value 0007", "Unknown value 0008", "Unknown value 0009", "Unknown value 000a", "Unknown value 000b", "Unknown value 000c", "Unknown value 000d", "Unknown value 000e", "Unknown value 000f", "Unknown value 0010"]
+    filenrsequencing
+      type: radio
+      value: On
+      options: ["On", "Off"]
+    modelflash
+      type: radio
+      value: On
+      options: ["On", "Off"]
+    viewfindergrid
+      type: radio
+      value: On
+      options: ["On", "Off"]
+    imagerotationflag
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    nocfcardrelease
+      type: radio
+      value: On
+      options: ["On", "Off"]
+    flashmodemanualpower
+      type: radio
+      value: Full
+      options: ["Full", "1/2", "1/4", "1/8", "1/16", "1/32", "Unknown value 0006", "Unknown value 0007", "Unknown value 0008", "Unknown value 0009", "Unknown value 000a", "Unknown value 000b", "Unknown value 000c", "Unknown value 000d", "Unknown value 000e", "Unknown value 000f", "Unknown value 0010", "Unknown value 0011", "Unknown value 0012", "Unknown value 0013", "Unknown value 0014", "Unknown value 0015"]
+    autofocusarea
+      type: radio
+      value: Centre
+      options: ["Centre", "Top", "Bottom", "Left", "Right", "Unknown value 0005", "Unknown value 0006", "Unknown value 0007", "Unknown value 0008", "Unknown value 0009", "Unknown value 000a", "Unknown value 000b", "Unknown value 000c", "Unknown value 000d", "Unknown value 000e", "Unknown value 000f", "Unknown value 0010", "Unknown value 0011", "Unknown value 0012", "Unknown value 0013", "Unknown value 0014", "Unknown value 0015", "Unknown value 0016", "Unknown value 0017", "Unknown value 0018", "Unknown value 0019", "Unknown value 001a", "Unknown value 001b", "Unknown value 001c", "Unknown value 001d", "Unknown value 001e", "Unknown value 001f", "Unknown value 0020", "Unknown value 0021", "Unknown value 0022", "Unknown value 0023", "Unknown value 0024", "Unknown value 0025", "Unknown value 0026", "Unknown value 0027", "Unknown value 0028", "Unknown value 0029", "Unknown value 002a", "Unknown value 002b", "Unknown value 002c", "Unknown value 002d", "Unknown value 002e", "Unknown value 002f", "Unknown value 0030", "Unknown value 0031", "Unknown value 0032", "Unknown value 0033"]
+    flashexposurecompensation
+      type: range
+      value: 0.0
+      options: -3.0..0.6666667759418488:step(0.3333333432674408)
+    bracketing
+      type: radio
+      value: Off
+      options: ["On", "Off"]
+    bracketmode
+      type: radio
+      value: Flash/speed
+      options: ["Flash/speed", "Flash/speed/aperture", "Flash/aperture", "Flash only"]
+    evstep
+      type: radio
+      value: 1/3
+      options: ["1/3", "1/2", "Unknown value 0002"]
+    bracketset
+      type: radio
+      value: AE & Flash
+      options: ["AE & Flash", "AE only", "Flash only", "WB bracketing", "ADL bracketing"]
+    bracketorder
+      type: radio
+      value: MTR > Under
+      options: ["MTR > Under", "Under > MTR"]
+    burstnumber
+      type: range
+      value: 1.0
+      options: 1.0..100.0:step(1.0)
+    maximumshots
+      type: text
+      value: 11
+    autowhitebias
+      type: range
+      value: 83.0
+      options: 0.0..168.0:step(1.0)
+    tungstenwhitebias
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    flourescentwhitebias
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    daylightwhitebias
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    flashwhitebias
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    cloudywhitebias
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    shadewhitebias
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    whitebiaspresetno
+      type: radio
+      value: 0
+      options: ["0", "1", "2", "3"]
+    whitebiaspreset0
+      type: text
+      value: 26214735
+    whitebiaspreset1
+      type: text
+      value: 26214735
+    whitebiaspreset2
+      type: text
+      value: 26214735
+    whitebiaspreset3
+      type: text
+      value: 26214735
+    whitebiaspreset4
+      type: text
+      value: 26214735
+    selftimerdelay
+      type: radio
+      value: 2 seconds
+      options: ["2 seconds", "5 seconds", "10 seconds", "20 seconds"]
+    centerweightsize
+      type: radio
+      value: 8 mm
+      options: ["6 mm", "8 mm", "10 mm", "12 mm", "Average"]
+    microphone
+      type: radio
+      value: Auto sensitivity
+      options: ["Auto sensitivity", "High sensitivity", "Medium sensitivity", "Low sensitivity", "Microphone off"]
+    reverseindicators
+      type: radio
+      value: On
+      options: ["On", "Off"]
+  other
+    5001
+      type: menu
+      value: 100
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100"]
+    5003
+      type: menu
+      value: 4288x2848
+      options: ["4288x2848", "3216x2136", "2144x1424"]
+    5004
+      type: menu
+      value: 4
+      options: ["0", "1", "2", "3", "4", "5", "6", "7"]
+    5005
+      type: menu
+      value: 32784
+      options: ["2", "4", "5", "6", "7", "32784", "32785", "32786", "32787"]
+    5007
+      type: menu
+      value: 900
+      options: ["280", "320", "350", "400", "450", "500", "560", "630", "710", "800", "900", "1000", "1100", "1300", "1400", "1600", "1800", "2000", "2200"]
+    5008
+      type: range
+      value: 2600.0
+      options: 2000.0..3500.0:step(1.0)
+    500a
+      type: menu
+      value: 32785
+      options: ["1", "32784", "32785"]
+    500b
+      type: menu
+      value: 3
+      options: ["2", "3", "4"]
+    500c
+      type: menu
+      value: 32784
+      options: ["4", "32784", "32785", "32786", "32787"]
+    500d
+      type: menu
+      value: 300000
+      options: ["1", "2", "3", "4", "5", "6", "8", "10", "12", "15", "20", "25", "31", "40", "50", "62", "80", "100", "125", "166", "200", "250", "333", "400", "500", "666", "769", "1000", "1250", "1666", "2000", "2500", "3333", "4000", "5000", "6250", "7692", "10000", "13000", "16000", "20000", "25000", "30000", "40000", "50000", "60000", "80000", "100000", "130000", "150000", "200000", "250000", "300000"]
+    500e
+      type: menu
+      value: 3
+      options: ["1", "2", "3", "4"]
+    500f
+      type: menu
+      value: 400
+      options: ["100", "125", "160", "200", "250", "320", "400", "500", "640", "800", "1000", "1250", "1600", "2000", "2500", "3200", "4000", "5000", "6400"]
+    5010
+      type: menu
+      value: 0
+      options: ["-5000", "-4666", "-4333", "-4000", "-3666", "-3333", "-3000", "-2666", "-2333", "-2000", "-1666", "-1333", "-1000", "-666", "-333", "0", "333", "666", "1000", "1333", "1666", "2000", "2333", "2666", "3000", "3333", "3666", "4000", "4333", "4666", "5000"]
+    5011
+      type: text
+      value: 20161023T214728
+    5013
+      type: menu
+      value: 1
+      options: ["1", "2", "32784", "32785", "32786", "32790"]
+    5018
+      type: menu
+      value: 1
+      options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100"]
+    501c
+      type: menu
+      value: 32785
+      options: ["2", "32784", "32785"]
+    501e
+      type: text
+      value:
+    501f
+      type: text
+      value:
+    d406
+      type: text
+      value: Windows/6.0.5330.0 MTPClassDriver/6.0.5330.0
+    d407
+      type: text
+      value: 1
+    d010
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d011
+      type: text
+      value: Normal
+    d012
+      type: text
+      value: Bird
+    d013
+      type: text
+      value: INSECT
+    d014
+      type: text
+      value:
+    d015
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d016
+      type: menu
+      value: 0
+      options: ["0", "1", "2"]
+    d017
+      type: range
+      value: 83.0
+      options: 0.0..168.0:step(1.0)
+    d018
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d019
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d01a
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d01b
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d01c
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d01d
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d01e
+      type: menu
+      value: 20
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]
+    d01f
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4"]
+    d020
+      type: text
+      value:
+    d021
+      type: text
+      value:
+    d022
+      type: text
+      value:
+    d023
+      type: text
+      value:
+    d024
+      type: text
+      value:
+    d025
+      type: text
+      value: 26214735
+    d026
+      type: text
+      value: 26214735
+    d027
+      type: text
+      value: 26214735
+    d028
+      type: text
+      value: 26214735
+    d029
+      type: text
+      value: 26214735
+    d02e
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"]
+    d02f
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"]
+    d031
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d032
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d040
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d041
+      type: text
+      value:
+    d042
+      type: text
+      value:
+    d043
+      type: text
+      value:
+    d044
+      type: text
+      value:
+    d045
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d048
+      type: menu
+      value: 2
+      options: ["0", "1", "2"]
+    d049
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d04b
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d04f
+      type: menu
+      value: 1
+      options: ["0", "1"]
+    d050
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6"]
+    d051
+      type: menu
+      value: 1
+      options: ["0", "1", "2", "3"]
+    d053
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d054
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d055
+      type: menu
+      value: 0
+      options: ["0", "1", "2"]
+    d056
+      type: menu
+      value: 0
+      options: ["0", "1", "2"]
+    d057
+      type: menu
+      value: 0
+      options: ["0", "1", "2"]
+    d058
+      type: menu
+      value: 2
+      options: ["0", "1", "2"]
+    d059
+      type: menu
+      value: 1
+      options: ["0", "1", "2", "3", "4"]
+    d05a
+      type: menu
+      value: 0
+      options: ["-6", "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5", "6"]
+    d05b
+      type: menu
+      value: 0
+      options: ["-6", "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5", "6"]
+    d05c
+      type: menu
+      value: 0
+      options: ["-6", "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5", "6"]
+    d05e
+      type: menu
+      value: 1
+      options: ["0", "1"]
+    d05f
+      type: menu
+      value: 3
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"]
+    d062
+      type: menu
+      value: 1
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    d063
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d065
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5"]
+    d067
+      type: text
+      value: 23567990
+    d068
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6"]
+    d069
+      type: menu
+      value: 100
+      options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100"]
+    d06a
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d06b
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d06c
+      type: menu
+      value: 1
+      options: ["0", "1", "2"]
+    d06f
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d070
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d071
+      type: menu
+      value: 1
+      options: ["0", "1"]
+    d072
+      type: text
+      value:
+    d073
+      type: text
+      value:
+    d074
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+    d075
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+    d077
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d078
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4"]
+    d079
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d07a
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d080
+      type: menu
+      value: 1
+      options: ["0", "1", "2"]
+    d081
+      type: menu
+      value: 2
+      options: ["0", "1", "2", "3"]
+    d082
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d083
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d084
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
+    d085
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d086
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d087
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d088
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d089
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d08a
+      type: menu
+      value: 1
+      options: ["0", "1"]
+    d08b
+      type: menu
+      value: 1
+      options: ["0", "1", "2"]
+    d08c
+      type: menu
+      value: 5
+      options: ["0", "2", "5", "6", "7"]
+    d08d
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d090
+      type: text
+      value:
+    d091
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d092
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d093
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+    d094
+      type: menu
+      value: 1
+      options: ["0", "1"]
+    d095
+      type: menu
+      value: 0
+      options: ["-20", "-19", "-18", "-17", "-16", "-15", "-14", "-13", "-12", "-11", "-10", "-9", "-8", "-7", "-6", "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
+    d096
+      type: menu
+      value: 21
+      options: ["-20", "-19", "-18", "-17", "-16", "-15", "-14", "-13", "-12", "-11", "-10", "-9", "-8", "-7", "-6", "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"]
+    d097
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"]
+    d098
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100"]
+    d099
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
+    d09a
+      type: menu
+      value: 20
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
+    d09b
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d0a0
+      type: menu
+      value: 1
+      options: ["0", "1", "2"]
+    d0a2
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4"]
+    d0a3
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d0c0
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d0c1
+      type: menu
+      value: 3
+      options: ["0", "1", "2", "3"]
+    d0c2
+      type: menu
+      value: 3
+      options: ["0", "1", "2", "3", "4", "5", "6", "7"]
+    d0c3
+      type: menu
+      value: 1
+      options: ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    d0c4
+      type: menu
+      value: 0
+      options: ["0", "1", "2"]
+    d0c5
+      type: menu
+      value: 3
+      options: ["0", "1", "2", "3", "4", "5", "6", "7"]
+    d0c6
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d0c7
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4"]
+    d0e0
+      type: text
+      value: 47
+    d0e1
+      type: menu
+      value: 1
+      options: ["0", "1"]
+    d0e2
+      type: text
+      value: 1
+    d0e3
+      type: text
+      value: 2000
+    d0e4
+      type: text
+      value: 3500
+    d0e5
+      type: text
+      value: 280
+    d0e6
+      type: text
+      value: 280
+    d0f2
+      type: menu
+      value: 1
+      options: ["0", "1", "2", "3", "4", "5"]
+    d0f3
+      type: menu
+      value: 2
+      options: ["0", "1", "2", "3", "4", "5"]
+    d0f4
+      type: menu
+      value: 1
+      options: ["0", "1", "2", "3", "4", "5"]
+    d100
+      type: menu
+      value: 1966081
+      options: ["73536", "71936", "70536", "69536", "68736", "68036", "67536", "67136", "66786", "66536", "66336", "66176", "66036", "65936", "65856", "65786", "65736", "65696", "65661", "65636", "65616", "65596", "65586", "65576", "65566", "65561", "65556", "65551", "65549", "65546", "65544", "65542", "65541", "65540", "65539", "655385", "65538", "655376", "655373", "65537", "851978", "1048586", "131073", "1638410", "196609", "262145", "327681", "393217", "524289", "655361", "851969", "983041", "1310721", "1638401", "1966081"]
+    d101
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d102
+      type: text
+      value: 0
+    d103
+      type: menu
+      value: 11
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42"]
+    d104
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d105
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d106
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d108
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51"]
+    d109
+      type: range
+      value: 0.0
+      options: -30.0..30.0:step(2.0)
+    d10b
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d10c
+      type: menu
+      value: 1
+      options: ["0", "1"]
+    d10d
+      type: text
+      value:
+    d10e
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d114
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d120
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d121
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d122
+      type: menu
+      value: 0
+      options: ["0", "1", "2"]
+    d124
+      type: menu
+      value: 0
+      options: ["-18", "-17", "-16", "-15", "-14", "-13", "-12", "-11", "-10", "-9", "-8", "-7", "-6", "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"]
+    d125
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7"]
+    d126
+      type: range
+      value: 0.0
+      options: -18.0..6.0:step(2.0)
+    d148
+      type: menu
+      value: 0
+      options: ["0", "1", "2"]
+    d149
+      type: menu
+      value: 1
+      options: ["0", "1"]
+    d14e
+      type: menu
+      value: 2
+      options: ["0", "1", "2", "3", "4", "5"]
+    d14f
+      type: menu
+      value: 3
+      options: ["0", "1", "2", "3", "4", "5", "6"]
+    d150
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d151
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d152
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d153
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d154
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d155
+      type: range
+      value: 84.0
+      options: 0.0..168.0:step(1.0)
+    d156
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d160
+      type: menu
+      value: 1
+      options: ["0", "1", "2"]
+    d163
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d164
+      type: menu
+      value: 13
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26"]
+    d166
+      type: menu
+      value: 1
+      options: ["0", "1", "2"]
+    d167
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d16c
+      type: menu
+      value: 1
+      options: ["0", "1"]
+    d16d
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"]
+    d181
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d182
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d183
+      type: menu
+      value: 2
+      options: ["0", "1", "2", "3", "4"]
+    d184
+      type: menu
+      value: 3
+      options: ["0", "1", "2", "3"]
+    d187
+      type: menu
+      value: 0
+      options: ["0", "1", "2"]
+    d189
+      type: menu
+      value: 12
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
+    d18a
+      type: menu
+      value: 0
+      options: ["0", "2", "5", "6", "7"]
+    d18b
+      type: menu
+      value: 0
+      options: ["0", "5", "6", "7"]
+    d18d
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d18e
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d1a0
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d1a2
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d1a3
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d1a4
+      type: text
+      value: 1
+    d1b0
+      type: menu
+      value: 1
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+    d1b1
+      type: menu
+      value: -4
+      options: ["-60", "-59", "-58", "-57", "-56", "-55", "-54", "-53", "-52", "-51", "-50", "-49", "-48", "-47", "-46", "-45", "-44", "-43", "-42", "-41", "-40", "-39", "-38", "-37", "-36", "-35", "-34", "-33", "-32", "-31", "-30", "-29", "-28", "-27", "-26", "-25", "-24", "-23", "-22", "-21", "-20", "-19", "-18", "-17", "-16", "-15", "-14", "-13", "-12", "-11", "-10", "-9", "-8", "-7", "-6", "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60"]
+    d1b2
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d1b3
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d1c0
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d1c1
+      type: menu
+      value: 0
+      options: ["0", "1"]
+    d1d0
+      type: menu
+      value: 3
+      options: ["0", "1", "2", "3", "4", "5"]
+    d1d1
+      type: menu
+      value: 8
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    d1d2
+      type: menu
+      value: 9
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+    d1d3
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d1d4
+      type: menu
+      value: 0
+      options: ["0", "1", "2"]
+    d1d5
+      type: menu
+      value: 9
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"]
+    d1d6
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"]
+    d1d7
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d1d8
+      type: menu
+      value: 9
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"]
+    d1d9
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"]
+    d1da
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3"]
+    d1db
+      type: menu
+      value: 9
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"]
+    d1dc
+      type: menu
+      value: 0
+      options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"]
+    d200
+      type: menu
+      value: 1
+      options: ["1", "2", "3", "4", "101", "102", "103", "104", "201", "202", "203", "204", "205", "206", "207", "208", "209"]
+    d201
+      type: menu
+      value: 0
+      options: []

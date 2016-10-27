@@ -1,12 +1,27 @@
-<h5 class="content-padded">Timelapse Settings</h5>
 <ul class="table-view">
   <% @timelapse_modes.each do |mode| %>
+    <li class="table-view-divider">Timelapse Settings - <%= mode %></li>
+    <li class="table-view-cell media">
+      <%= link_to(settings_timelapse_start_path(shooting_mode: mode), class: "navigate-right") do %>
+        <div class="media-body">
+          <%= mode %> Start Settings
+        </div>
+      <% end %>
+    </li>
+    <li class="table-view-cell media">
+      <%= link_to(settings_timelapse_mode_path(shooting_mode: mode), class: "navigate-right") do %>
+        <div class="media-body">
+          <%= mode %> Time Settings
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+  <li class="table-view-divider">Sensor Settings</li>
   <li class="table-view-cell media">
-    <%= link_to(settings_timelapse_mode_path(shooting_mode: mode), class: "navigate-right") do %>
+    <%= link_to(settings_sensors_start_path, class: "navigate-right") do %>
       <div class="media-body">
-        <%= mode %>
+        Sensors Start Settings
       </div>
     <% end %>
   </li>
-  <% end %>
 </ul>

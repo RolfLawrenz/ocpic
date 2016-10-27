@@ -1,11 +1,11 @@
-<h4>Timelapse <%= @shooting_mode %></h4>
+<h4>Timelapse Time - <%= @shooting_mode %></h4>
 <%= form_tag id:'settings_form', :controller => 'settings', :action => 'timelapse_mode', :method => 'get' do %>
   <% Program::TimelapseProgram::TIME_MODES.each do |time_mode| %>
     <h5 class="content-padded"><%= time_mode %></h5>
     <% @timelapse_settings[time_mode].sort_by{|f| f[:name]}.each do |field| %>
       <div class="input-row">
-        <%= setting_label_field(field, @shooting_mode, time_mode) %>
-        <%= setting_setting_field(field, @shooting_mode, time_mode) %>
+        <%= setting_label_field(SettingsController::TIMELAPSE_STR, field, @shooting_mode, time_mode) %>
+        <%= setting_setting_field(SettingsController::TIMELAPSE_STR, field, @shooting_mode, time_mode) %>
       </div>
     <% end %>
   <% end %>

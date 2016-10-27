@@ -1,0 +1,9 @@
+<h4>Timelapse Start - <%= @shooting_mode %></h4>
+<%= form_tag id:'settings_form', :controller => 'settings', :action => 'timelapse_start', :method => 'get' do %>
+  <% @start_settings.sort_by{|f| f[:name]}.each do |field| %>
+    <div class="input-row">
+      <%= setting_label_field(SettingsController::TIMELAPSE_STR, field, @shooting_mode, 'start') %>
+      <%= setting_setting_field(SettingsController::TIMELAPSE_STR, field, @shooting_mode, 'start') %>
+    </div>
+  <% end %>
+<% end %>
