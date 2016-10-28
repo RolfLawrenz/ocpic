@@ -21,7 +21,7 @@ module SettingsHelper
         html = text_field_tag("field_#{program}_#{shooting_mode}_#{time_mode}_#{field[:name]}", field[:value], class: "setting_setting_text setting_field setting_text_field", data: {shooting_mode: shooting_mode, time_mode: time_mode})
       when :radio
         select_values = field[:options].map{|opt| [opt, opt]}
-        html = select_tag("field_#{program}_#{shooting_mode}_#{time_mode}_#{field[:name]}", options_for_select(select_values, field[:value]), class: "setting_setting_select setting_field setting_select_field", data: {shooting_mode: shooting_mode, time_mode: time_mode})
+        html = select_tag("field_#{program}_#{shooting_mode}_#{time_mode}_#{field[:name]}", options_for_select(select_values, field[:value]), class: "setting_setting_select setting_field setting_select_field", data: {shooting_mode: shooting_mode, time_mode: time_mode}, include_blank: 'No Change')
       when :range
         html = text_field_tag("field_#{program}_#{shooting_mode}_#{time_mode}_#{field[:name]}", field[:value], class: "setting_setting_range setting_field setting_text_field", data: {shooting_mode: shooting_mode, time_mode: time_mode})
       when :date
