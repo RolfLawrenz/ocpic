@@ -106,7 +106,7 @@ class SettingsController < ApplicationController
       settings << {
         name: selected_setting,
         type: camera_setting[:type],
-        value: ProgramController.find_or_create_setting_value(setting_db_name(TIMELAPSE_STR, shooting_mode, time_mode, selected_setting), camera_setting[:value]),
+        value: ProgramController.find_or_create_setting_value(setting_db_name(TIMELAPSE_STR, shooting_mode, time_mode, selected_setting), ''),
         options: camera_setting[:options]
       }
     end
@@ -122,7 +122,7 @@ class SettingsController < ApplicationController
       settings << {
         name: selected_setting,
         type: camera_setting[:type],
-        value: ProgramController.find_or_create_setting_value(setting_db_name(program, shooting_mode, "start", selected_setting), camera_setting[:value]),
+        value: ProgramController.find_or_create_setting_value(setting_db_name(program, shooting_mode, "start", selected_setting), ''),
         options: camera_setting[:options]
       }
     end
