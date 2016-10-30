@@ -1,2 +1,16 @@
-<h1>Photos#index</h1>
-<p>Find me in app/views/photos/index.html.erb</p>
+<h4>Photo Count: <%= @photo_count %></h4>
+<% @photo_files.each do |photo_file| %>
+  <table>
+    <tr>
+      <td>
+        <img src="/images/thumbs/thumb_<%= photo_file.name %>" >
+      </td>
+      <td>
+        <table>
+          <tr><td><%= photo_file.name %></td></tr>
+          <tr><td><%= @photo_file_date[photo_file.name].to_s(:db) %></td></tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<% end %>

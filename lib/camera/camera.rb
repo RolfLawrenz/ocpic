@@ -33,7 +33,7 @@ module Camera
       @capture_count = 0
       begin
         puts "---------- CONNECTING TO CAMERA -------"
-        @camera = GPhoto2::Camera.first
+        init_camera
         @exp_comp_choices = field_choices(['capturesettings','exposurecompensation'])
         @f_number_choices = field_choices(['capturesettings','f-number'])
         @iso_choices = field_choices(['imgsettings','iso'])
@@ -41,6 +41,10 @@ module Camera
         #  No Camera, try again later
         puts "ERROR: #{e.message}"
       end
+    end
+
+    def init_camera
+      @camera = GPhoto2::Camera.first
     end
 
     # Settings in the form of:
@@ -321,6 +325,36 @@ module Camera
     def show_all_settings
       widget = @camera.window
       display_fields(widget)
+    end
+
+    def photo_count
+      photo_files(@camera.filesystem).count
+    end
+
+    def photo_files(folder = @camera.filesystem)
+      folder_files = []
+      folder.files.each do |file|
+        # puts "..file=#{file.inspect}"
+        folder_files << file
+      end
+      folder.folders.each do |child_folder|
+        # puts "__child_folder=#{folder.inspect}"
+        folder_files += photo_files(child_folder)
+      end
+      folder_files
+    end
+
+    def download_thumbs(dest_folder)
+      puts "DOWNLOAD THUMBS to #{dest_folder}"
+      FileUtils.mkdir_p(dest_folder) unless File.directory?(dest_folder)
+
+      # Need to loose connection to camera so can use this command line gphoto2 task
+      shutdown
+
+      system("cd #{dest_folder};gphoto2 --get-all-thumbnails --skip-existing;cd -")
+
+      # Take control of camera again
+      init_camera
     end
 
     private
