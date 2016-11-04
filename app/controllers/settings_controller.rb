@@ -2,11 +2,12 @@ class SettingsController < ApplicationController
 
   TIMELAPSE_SELECTED_SETTINGS = [
       'exposurecompensation',
-      # 'f-number',
+      'expprogram',
+      'f-number',
       'highisonr',
       'iso',
       'longexpnr',
-      # 'shutterspeed2'
+      'shutterspeed2'
   ]
 
   PROGRAM_START_SETTINGS = [
