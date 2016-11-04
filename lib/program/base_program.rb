@@ -13,11 +13,16 @@ module Program
       Rails.logger.debug("STARTING PROGRAM #{name}")
       @start_time = Time.now
       @end_time = nil
+      run
     end
 
     def stop
       Rails.logger.debug("STOPPING PROGRAM #{name}")
       @end_time = Time.now
+    end
+
+    def run
+      raise NotImplementedError
     end
 
     def toggle_start_stop
@@ -32,6 +37,10 @@ module Program
       @start_time.present? && @end_time.nil?
     end
 
+    def stopped?
+      @end_time.present?
+    end
+
     def running_time
       Time.now - @start_time
     end
@@ -43,6 +52,10 @@ module Program
 
     def photos_taken
       @photo_count
+    end
+
+    def prepare_camera
+      Rails.logger.debug("PREPARE CAMERA")
     end
   end
 end

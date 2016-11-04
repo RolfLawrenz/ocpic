@@ -5,6 +5,7 @@ class PhotosController < ApplicationController
   def index
     if Camera::CameraManager.instance.connected?
 
+      Camera::CameraManager.instance.refresh
       camera = Camera::CameraManager.instance.camera
       prepare_photos(camera)
 
@@ -44,13 +45,22 @@ class PhotosController < ApplicationController
       match = false
       disk_files.each do |disk_file|
         if File.basename(disk_file).include?(camera_file.name)
-          @photo_file_date[camera_file.name] = File.mtime(disk_file)
           match = true
         end
       end
       download_photos = true unless match
     end
     camera.download_thumbs(PHOTOS_FOLDER) if download_photos
+
+    # Set photo_file_date
+    disk_files = Dir["#{PHOTOS_FOLDER}/*"]
+    camera_files.each do |camera_file|
+      disk_files.each do |disk_file|
+        if File.basename(disk_file).include?(camera_file.name)
+          @photo_file_date[camera_file.name] = File.mtime(disk_file)
+        end
+      end
+    end
   end
 
 end

@@ -22,5 +22,11 @@ module Camera
       return @camera.camera_connected?
     end
 
+    def refresh
+      @camera.shutdown
+      @camera = nil
+      @camera = ::Camera::Camera.new
+    end
+
   end
 end

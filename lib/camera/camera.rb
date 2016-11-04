@@ -271,7 +271,7 @@ module Camera
 
     def capture_photo
       Rails.logger.info("##{@capture_count} Capture Photo")
-      puts("##{@capture_count} Capture Photo")
+      # puts("##{@capture_count} Capture Photo")
       @capture_count += 1
       @camera.capture
     end
