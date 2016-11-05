@@ -13,6 +13,7 @@ module Program
 
     def run
       prepare_camera
+      set_timelapse_settings
 
       @photo_count = 0
 
@@ -43,9 +44,31 @@ module Program
       end
     end
 
+    private
+
+    # Return what the current time mode is based on current light reading in camera
+    def current_time_mode
+      camera = Camera::CameraManager.instance.camera
+      ev = camera.ev
+      if ev < 5
+        return TIME_MODES[2]
+      elsif ev < 12
+        return TIME_MODES[1]
+      else
+        return TIME_MODES[0]
+      end
+    end
+
+    def set_timelapse_settings
+      Rails.logger.debug("SET TIMELAPSE SETTINGS")
+      shooting_mode = ProgramController.find_or_create_setting_value(Setting::NAME_TIMELAPSE_MODE, ProgramController::TIMELAPSE_MODES[0])
+
+      timelapse_settings = SettingsController.timelapse_settings(shooting_mode, current_time_mode)
+      new_settings = timelapse_settings.each_with_object({}) { |i, n| n[i[:name]] = i[:value] }
+
+      camera = Camera::CameraManager.instance.camera
+      camera.set_settings(new_settings)
+    end
+
   end
-
-  private
-
-
 end

@@ -56,6 +56,19 @@ module Program
 
     def prepare_camera
       Rails.logger.debug("PREPARE CAMERA")
+
+      program_name = @name.titleize
+      if @name = 'timelapse'
+        shooting_mode = ProgramController.find_or_create_setting_value(Setting::NAME_TIMELAPSE_MODE, ProgramController::TIMELAPSE_MODES[0])
+      else
+        shooting_mode = ''
+      end
+
+      init_settings = SettingsController.start_settings(program_name, shooting_mode)
+      new_settings = init_settings.each_with_object({}) { |i, n| n[i[:name]] = i[:value] }
+
+      camera = Camera::CameraManager.instance.camera
+      camera.set_settings(new_settings, true)
     end
   end
 end

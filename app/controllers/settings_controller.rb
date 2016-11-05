@@ -55,8 +55,8 @@ class SettingsController < ApplicationController
       'whitebalance',
   ]
 
-  TIMELAPSE_STR = ProgramController::PROGRAM_NAMES[:timelapse]
-  SENSORS_STR = ProgramController::PROGRAM_NAMES[:sensors]
+  TIMELAPSE_STR = ProgramController::PROGRAM_NAMES[:Timelapse]
+  SENSORS_STR = ProgramController::PROGRAM_NAMES[:Sensors]
 
   def index
     @timelapse_modes = ProgramController::TIMELAPSE_MODES.values
@@ -69,7 +69,7 @@ class SettingsController < ApplicationController
     if Camera::CameraManager.instance.connected?
       @timelapse_settings = {}
       Program::TimelapseProgram::TIME_MODES.each do |time_mode|
-        @timelapse_settings[time_mode] = timelapse_settings(@shooting_mode, time_mode)
+        @timelapse_settings[time_mode] = SettingsController.timelapse_settings(@shooting_mode, time_mode)
       end
       render :timelapse_mode
     else
@@ -81,7 +81,7 @@ class SettingsController < ApplicationController
     @shooting_mode = params['shooting_mode']
     @back_path = settings_index_path
     if Camera::CameraManager.instance.connected?
-      @start_settings = start_settings(TIMELAPSE_STR, @shooting_mode)
+      @start_settings = SettingsController.start_settings(TIMELAPSE_STR, @shooting_mode)
       render :timelapse_start
     else
       render "camera/not_connected"
@@ -91,14 +91,14 @@ class SettingsController < ApplicationController
   def sensors_start
     @back_path = settings_index_path
     if Camera::CameraManager.instance.connected?
-      @start_settings = start_settings(SENSORS_STR, '')
+      @start_settings = SettingsController.start_settings(SENSORS_STR, '')
       render :sensors_start
     else
       render "camera/not_connected"
     end
   end
 
-  def timelapse_settings(shooting_mode, time_mode)
+  def self.timelapse_settings(shooting_mode, time_mode)
     camera = Camera::CameraManager.instance.camera
 
     settings = []
@@ -114,7 +114,7 @@ class SettingsController < ApplicationController
     settings
   end
 
-  def start_settings(program, shooting_mode)
+  def self.start_settings(program, shooting_mode)
     camera = Camera::CameraManager.instance.camera
 
     settings = []
@@ -141,14 +141,14 @@ class SettingsController < ApplicationController
       setting_value = setting_value.include?('active')
     end
 
-    save_setting_with(setting_db_name(program, shooting_mode, time_mode, setting_name), setting_value)
+    save_setting_with(SettingsController.setting_db_name(program, shooting_mode, time_mode, setting_name), setting_value)
 
     render plain: setting_value, status: status
   end
 
   private
 
-  def setting_db_name(program, shooting_mode, time_mode, field_name)
+  def self.setting_db_name(program, shooting_mode, time_mode, field_name)
     "setting_#{program}_#{shooting_mode}_#{time_mode}_#{field_name}"
   end
 

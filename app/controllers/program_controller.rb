@@ -1,23 +1,23 @@
 class ProgramController < ApplicationController
 
   PROGRAM_NAMES = {
-      timelapse: 'Timelapse',
-      sensors: 'Sensors',
+      Timelapse: 'Timelapse',
+      Sensors: 'Sensors',
   }
 
   TIMELAPSE_MODES = {
-      landscape: 'Landscape',
-      macro: 'Macro'
+      Landscape: 'Landscape',
+      Macro: 'Macro'
   }
 
   def index
-    @program_name = ProgramController.find_or_create_setting_value(Setting::NAME_CURR_PROGRAM_NAME, 'timelapse')
+    @program_name = ProgramController.find_or_create_setting_value(Setting::NAME_CURR_PROGRAM_NAME, PROGRAM_NAMES[0])
     @program_select = []
     PROGRAM_NAMES.each do |k,v|
       @program_select << [v, k]
     end
 
-    @timelapse_mode_value = ProgramController.find_or_create_setting_value(Setting::NAME_TIMELAPSE_MODE, 'landscape')
+    @timelapse_mode_value = ProgramController.find_or_create_setting_value(Setting::NAME_TIMELAPSE_MODE, TIMELAPSE_MODES[0])
     @timelapse_mode_select = []
     TIMELAPSE_MODES.each do |k,v|
       @timelapse_mode_select << [v, k]

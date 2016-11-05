@@ -289,7 +289,7 @@ module Camera
       @camera.preview
     end
 
-    def set_settings(settings)
+    def set_settings(settings, ignore_errors = false)
       return if settings.nil?
 
       count = 0
@@ -307,6 +307,7 @@ module Camera
           end
           break
         rescue
+          return if ignore_errors
           count += 1
           Rails.logger.error("set settings FAILED - retry")
           raise "SETTINGS ERROR" if count == SET_SETTINGS_RETRY_COUNT
@@ -361,6 +362,10 @@ module Camera
 
     def set_settings_hash(settings)
       settings.each do |setting, value|
+        if value.blank?
+          Rails.logger.debug("IGNORE SET SETTING for #{setting} because blank")
+          next
+        end
         Rails.logger.info("  #{setting}: #{value}")
         @camera[setting] = value
       end
