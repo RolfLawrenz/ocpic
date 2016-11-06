@@ -30,5 +30,13 @@ module Sensors
       Random.rand(10)
     end
 
+    def proximity_pin_on?
+      false
+    end
+
+    def vibration_pin_on?
+      false
+    end
+
   end
 end

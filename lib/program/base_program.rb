@@ -58,7 +58,7 @@ module Program
       Rails.logger.debug("PREPARE CAMERA")
 
       program_name = @name.titleize
-      if @name = 'timelapse'
+      if @name == 'timelapse'
         shooting_mode = ProgramController.find_or_create_setting_value(Setting::NAME_TIMELAPSE_MODE, ProgramController::TIMELAPSE_MODES[0])
       else
         shooting_mode = ''

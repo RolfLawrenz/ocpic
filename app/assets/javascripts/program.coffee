@@ -43,3 +43,11 @@ $(document).on 'toggle', '#sensor_vibration', (evt) ->
     data: {
       sensor_vibration: $('#sensor_vibration').attr('class')
     }
+
+$(document).on 'change', '#sensor_time_between_photos', (evt) ->
+  $.ajax '/program/update',
+    type: 'POST'
+    dataType: 'text'
+    data: {
+      sensor_time_between_photos: $('#sensor_time_between_photos').val()
+    }

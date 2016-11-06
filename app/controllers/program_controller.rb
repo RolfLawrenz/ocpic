@@ -27,6 +27,7 @@ class ProgramController < ApplicationController
 
     @sensor_proximity_value = ProgramController.find_or_create_setting_value(Setting::NAME_SENSOR_PROXIMITY, "1")
     @sensor_vibration_value = ProgramController.find_or_create_setting_value(Setting::NAME_SENSOR_VIBRATION, "1")
+    @sensor_time_between_photos = ProgramController.find_or_create_setting_value(Setting::NAME_SENSOR_TIME_BETWEEN_PHOTOS, "1")
 
     program_manager = Program::ProgramManager.new
     @running_time = program_manager.current_program.running_time_text
@@ -62,6 +63,7 @@ class ProgramController < ApplicationController
     save_setting('interval', Setting::NAME_INTERVAL)
     save_setting_with('sensor_proximity', Setting::NAME_SENSOR_PROXIMITY, params['sensor_proximity'].include?('active') ? "1" : "0") if params['sensor_proximity']
     save_setting_with('sensor_vibration', Setting::NAME_SENSOR_VIBRATION, params['sensor_vibration'].include?('active') ? "1" : "0") if params['sensor_vibration']
+    save_setting('sensor_time_between_photos', Setting::NAME_SENSOR_TIME_BETWEEN_PHOTOS)
 
     head :ok
   end

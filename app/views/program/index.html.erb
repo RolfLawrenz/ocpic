@@ -1,17 +1,17 @@
 <%= form_tag id:'program_form', :controller => 'program', :action => 'index', :method => 'get' do %>
   <div class="input-row">
-    <%= label_tag(:program_name, "Program") %>
+    <%= label_tag(:program_name, "Program", class: 'label_setting') %>
     <%= select_tag(:program_name, options_for_select(@program_select, @program_name),
                    disabled: (@start_stop_text == 'Stop') ? true : false,
-                   class: (@start_stop_text == 'Stop') ? 'select_disabled' : '')%>
+                   class: "program_field program_select_field#{(@start_stop_text == 'Stop') ? 'select_disabled' : ''}")%>
   </div>
   <div class="input-row">
-    <%= label_tag(:status, "Running") %>
-    <%= text_field_tag(:status, @running_time, disabled: true) %>
+    <%= label_tag(:status, "Running", class: 'label_setting') %>
+    <%= text_field_tag(:status, @running_time, disabled: true, class: 'program_field program_text_field') %>
   </div>
   <div class="input-row">
-    <%= label_tag(:photo_count, "Photos") %>
-    <%= number_field_tag(:photo_count, @photo_count, disabled: true) %>
+    <%= label_tag(:photo_count, "Photos", class: 'label_setting') %>
+    <%= number_field_tag(:photo_count, @photo_count, disabled: true, class: 'program_field program_text_field') %>
   </div>
   <br/>
   <%= render "shared/program_start_stop_btn" %>
@@ -20,32 +20,34 @@
   <div id="timelapse_settings">
     <h3 class="table-view-divider">Timelapse Settings</h3>
     <div class="input-row">
-      <%= label_tag(:interval, "Interval(s)") %>
-      <%= number_field_tag(:interval, @interval_value, min: 1) %>
+      <%= label_tag(:interval, "Interval(s)", class: 'label_setting') %>
+      <%= number_field_tag(:interval, @interval_value, min: 1, class: 'program_field program_text_field') %>
     </div>
     <div class="input-row">
-      <%= label_tag(:timelapse_mode, "Mode") %>
-      <%= select_tag(:timelapse_mode, options_for_select(@timelapse_mode_select, @timelapse_mode_value)) %>
+      <%= label_tag(:timelapse_mode, "Mode", class: 'label_setting') %>
+      <%= select_tag(:timelapse_mode, options_for_select(@timelapse_mode_select, @timelapse_mode_value), class: 'program_field program_select_field') %>
     </div>
   </div>
 
-  <div id="sensor_settings">
-    <h3 class="table-view-divider" >Sensors Settings</h3>
-    <ul class="table-view">
-      <li class="table-view-cell">
-        <b>Proximity Sensor</b>
-        <div id='sensor_proximity' class="toggle<%= @sensor_proximity_value == "1" ? ' active' : ''%>">
-          <div class="toggle-handle"></div>
-        </div>
-      </li>
-      <li class="table-view-cell">
-        <b>Vibration Sensor</b>
-        <div id='sensor_vibration' class="toggle<%= @sensor_vibration_value == "1" ? ' active' : ''%>">
-          <div class="toggle-handle"></div>
-        </div>
-      </li>
-    </ul>
+  <h3 class="table-view-divider" >Sensors Settings</h3>
+
+  <div class="input-row">
+    <%= label_tag(:sensor_proximity, "Proximity Sensor", class: 'label_setting') %>
+    <div id='sensor_proximity' class="toggle<%= @sensor_proximity_value == "1" ? ' active' : ''%>">
+      <div class="toggle-handle"></div>
+    </div>
+  </div>
+
+  <div class="input-row">
+    <%= label_tag(:sensor_vibration, "Vibration Sensor", class: 'label_setting') %>
+    <div id='sensor_vibration' class="toggle<%= @sensor_vibration_value == "1" ? ' active' : ''%>">
+      <div class="toggle-handle"></div>
+    </div>
+  </div>
+
+  <div class="input-row">
+    <%= label_tag(:sensor_time_between_photos, "Time b/n Photos", class: 'label_setting') %>
+    <%= number_field_tag(:sensor_time_between_photos, @sensor_time_between_photos, min: 1, class: 'program_field program_text_field') %>
   </div>
 
 <% end %>
-
