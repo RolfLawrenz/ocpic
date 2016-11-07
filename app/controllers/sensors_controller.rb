@@ -17,4 +17,19 @@ class SensorsController < ApplicationController
 
     render json: values
   end
+
+  def update
+    setting_name = params['setting_name']
+    setting_value = params['setting_value']
+    if params['data_type'] == 'toggle'
+      setting_value = setting_value.include?('active')
+    end
+
+    if setting_name == 'led'
+      Pi::PiManager.instance.turn_led(setting_value ? :on : :off)
+    end
+
+    render plain: "ok", status: :ok
+  end
+
 end

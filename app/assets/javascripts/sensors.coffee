@@ -7,10 +7,20 @@ window.sensors_poll_count = 0
 $(document).on 'click', '#sensors_poll_btn', (evt) ->
   evt.preventDefault()
   if window.sensors_poll_count <= 0
-    window.sensors_poll_count = 30
+    window.sensors_poll_count = 20
     setTimeout ( ->
       poll_sensors_update()
-    ), 2000
+    ), 1000
+
+$(document).on 'toggle', '#sensor_led', (evt) ->
+  $.ajax '/sensors/update',
+    type: 'POST'
+    dataType: 'text'
+    data: {
+      data_type: 'toggle',
+      setting_name: evt.target.id
+      setting_value: evt.target.value
+    }
 
 poll_sensors_update = () ->
   window.sensors_poll_count = window.sensors_poll_count - 1
@@ -25,7 +35,7 @@ poll_sensors_update = () ->
       if window.sensors_poll_count > 0
         setTimeout ( ->
             poll_sensors_update()
-          ), 2000
+          ), 1000
       else
-        $("#poll_message").html("Press the Poll button to check if sensors are working. It will poll every couple seconds for a minute.")
+        $("#poll_message").html("Press the Poll button to check if sensors are working. It will poll every second for 20 seconds. Every poll it checks sensor value.")
         $("#sensors_poll_btn").removeClass('btn-negative').addClass('btn-positive')

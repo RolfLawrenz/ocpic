@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   end
 
   def home_shutdown_pi
-    PiManager.shutdown
+    PiManager.instance.shutdown
   end
 
 end

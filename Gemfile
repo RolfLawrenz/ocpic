@@ -15,6 +15,8 @@ gem 'jquery-rails'
 gem 'ffi', '~> 1.9', '>= 1.9.10'
 gem 'ffi-gphoto2', '~> 0.5.1'
 
+gem 'pi_piper', '~> 2.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

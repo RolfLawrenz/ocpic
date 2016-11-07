@@ -25,17 +25,21 @@ module Sensors
     end
 
     def sensor_count(sensor_name)
-      # TODO
-      # @sensor_counts[sensor_name]
-      Random.rand(10)
+      case sensor_name
+        when Sensors::SensorsManager::PROXIMITY_SENSOR
+          @sensor_counts[sensor_name] += 1 if proximity_pin_on?
+        when Sensors::SensorsManager::VIBRATION_SENSOR
+          @sensor_counts[sensor_name] += 1 if vibration_pin_on?
+      end
+      @sensor_counts[sensor_name]
     end
 
     def proximity_pin_on?
-      false
+      Pi::PiManager.instance.proximity_sensor_on?
     end
 
     def vibration_pin_on?
-      false
+      Pi::PiManager.instance.vibration_sensor_on?
     end
 
   end
