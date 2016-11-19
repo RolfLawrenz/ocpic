@@ -4,8 +4,13 @@ class HomeController < ApplicationController
     program_manager = Program::ProgramManager.new
     @running_time = program_manager.current_program.running_time_text
 
-    camera = Camera::CameraManager.instance.camera
-    @photo_count = camera.photo_count
+    if Camera::CameraManager.instance.connected?
+      camera = Camera::CameraManager.instance.camera
+      @photo_count = camera.photo_count
+    else
+      @photo_count = 0
+    end
+
   end
 
   def home_shutdown_pi
