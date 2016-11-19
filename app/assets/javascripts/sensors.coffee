@@ -18,8 +18,8 @@ $(document).on 'toggle', '#sensor_led', (evt) ->
     dataType: 'text'
     data: {
       data_type: 'toggle',
-      setting_name: evt.target.id
-      setting_value: evt.target.value
+      setting_name: evt.target.id,
+      setting_value: evt.target.className.split(" ")
     }
 
 poll_sensors_update = () ->

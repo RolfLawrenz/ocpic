@@ -25,7 +25,7 @@ class SensorsController < ApplicationController
       setting_value = setting_value.include?('active')
     end
 
-    if setting_name == 'led'
+    if setting_name == 'sensor_led'
       Pi::PiManager.instance.turn_led(setting_value ? :on : :off)
     end
 

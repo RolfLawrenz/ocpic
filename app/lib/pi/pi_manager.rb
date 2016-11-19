@@ -1,5 +1,3 @@
-require 'pi_piper'
-
 module Pi
   class PiManager
 
@@ -24,30 +22,40 @@ module Pi
     end
 
     def initialize
-      @led_pin  = PiPiper::Pin.new(:pin => LED_PIN, :direction => :out, :pull => :down)
-      @dip1_pin = PiPiper::Pin.new(:pin => DIP1_PIN, :direction => :in, :pull => :down)
-      @dip2_pin = PiPiper::Pin.new(:pin => DIP2_PIN, :direction => :in, :pull => :down)
-      @dip3_pin = PiPiper::Pin.new(:pin => DIP3_PIN, :direction => :in, :pull => :down)
-      @dip4_pin = PiPiper::Pin.new(:pin => DIP4_PIN, :direction => :in, :pull => :down)
-      @proximity_sensor_pin = PiPiper::Pin.new(:pin => PROXIMITY_SENSOR_PIN, :direction => :in, :pull => :down)
-      @vibration_sensor_pin = PiPiper::Pin.new(:pin => VIBRATION_SENSOR_PIN, :direction => :in, :pull => :down)
+      init_pin(LED_PIN, 'out')
+      #@led_pin  = PiPiper::Pin.new(:pin => LED_PIN, :direction => :out)
+      #@dip1_pin = PiPiper::Pin.new(:pin => DIP1_PIN, :direction => :in, :pull => :down)
+      #@dip2_pin = PiPiper::Pin.new(:pin => DIP2_PIN, :direction => :in, :pull => :down)
+      #@dip3_pin = PiPiper::Pin.new(:pin => DIP3_PIN, :direction => :in, :pull => :down)
+      #@dip4_pin = PiPiper::Pin.new(:pin => DIP4_PIN, :direction => :in, :pull => :down)
+      #@proximity_sensor_pin = PiPiper::Pin.new(:pin => PROXIMITY_SENSOR_PIN, :direction => :in, :pull => :down)
+      #@vibration_sensor_pin = PiPiper::Pin.new(:pin => VIBRATION_SENSOR_PIN, :direction => :in, :pull => :down)
+    end
+
+    # See GPIO manual. Direction can be in/out/pwm/clock/up/down/tri
+    def init_pin(pin_num, direction)
+      system("gpio -g mode #{pin_num} #{direction}")
+    end
+
+    def pin_on?(pin_num)
+      val = %x[gpio -g read #{pin_num}]
+      Rails.logger.debug "PIN #{pin_num} on? val=#{val}"
+      val == '1'
     end
 
     def proximity_sensor_on?
-      @proximity_sensor_pin.on?
+      pin_on?(PROXIMITY_SENSOR_PIN)
     end
 
     def vibration_sensor_on?
-      @vibration_sensor_pin.on?
+      pin_on?(VIBRATION_SENSOR_PIN)
     end
 
     # Either (:on, :off)
     def turn_led(value)
-      if value == :on
-        @led_pin.on
-      else
-        @led_pin.off
-      end
+      cmd = "gpio -g write #{LED_PIN} #{value == :on ? '1' : '0'}"
+      Rails.logger.debug("CMD=#{cmd}")
+      val = %x[#{cmd}]
     end
 
     def shutdown
@@ -87,7 +95,7 @@ module Pi
         free_memory_perc = (free_memory / total_memory * 100).round
         swap_used = top.split("\n")[4].split(', ')[3].to_f
 
-        disk_space = ssh.exec!("df /tmp --total -k -h")
+        disk_space = %x(df /tmp --total -k -h)
         puts "Disk Space (Total): #{disk_space.split("\n")[-1].partition("total")[2].split[0]}"
         puts "Disk Space (Used):  #{disk_space.split("\n")[-1].partition("total")[2].split[1]}"
         puts "Disk Space (Avail): #{disk_space.split("\n")[-1].partition("total")[2].split[2]}"
