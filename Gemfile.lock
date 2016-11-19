@@ -52,7 +52,6 @@ GEM
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    eventmachine (1.0.9)
     execjs (2.7.0)
     ffi (1.9.14)
     ffi-gphoto2 (0.5.1)
@@ -80,9 +79,6 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-    pi_piper (2.0.0)
-      eventmachine (= 1.0.9)
-      ffi
     puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -172,7 +168,6 @@ DEPENDENCIES
   ffi-gphoto2 (~> 0.5.1)
   jquery-rails
   listen (~> 3.0.5)
-  pi_piper (~> 2.0)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   rspec-rails (~> 3.4)
@@ -182,4 +177,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.2
+   1.13.6
