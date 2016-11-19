@@ -39,7 +39,7 @@ module Pi
 
     def pin_on?(pin_num)
       val = %x[gpio -g read #{pin_num}]
-      Rails.logger.debug "PIN #{pin_num} on? val='#{val.strip}'"
+      # Rails.logger.debug "PIN #{pin_num} on? val='#{val.strip}'"
       val.strip == '1'
     end
 
