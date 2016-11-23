@@ -31,7 +31,7 @@ You will also need a power source to power your Pi.
 
 When setting up your Pi you will need a HDMI monitor, keyboard and mouse.
 
-If you want a **LED**, connect it to GPIO PIN 18
+If you want a **LED**, connect it to GPIO PIN 18, using a pull down resistor.
 
 Connect the **Proximity Sensor** to GPIO PIN 7. Note my proximity sensor needs 5V. 
 
@@ -389,14 +389,21 @@ The **Program page** allows you to set a program to run. You have the option of 
 
 The timelapse program allows you to change the interval time between photos. This is not the delay between photos but the
 time of one photo to the next. For example if interval is 10 seconds and your photo takes 6 seconds, it will wait 4 seconds
-before it takes the next photo. Timelapse has two modes to choose from, each with their own settings.
+before it takes the next photo. 
+
+Timelapse has two modes to choose from: Macro and Landscape, each with their own settings.
 
 The sensor program you can configure which sensors are enabled. Also the time delay between photos.
 
 Startup settings are configured on the Settings page.
 
+Press the "Start" / "Stop" button to start/stop the program.
+
 On the **Photos page** you can view all the photos on the camera as a thumbnail.
 
-The **Settings Page** is for the programs. You can set the camera start settings. Also you can select the best
-camera settings for the time of day, based on lighting. There is a day, dusk/dawn and night modes. Each with their
-own settings. The program will slowly change from one to the other when the light changes.
+The **Settings Page** is for the programs. You can set the camera start settings. SO when the program starts it will
+change camera settings to match what is set here. Also you can select the best camera settings for the time of day, 
+based on lighting. There is a day, dusk/dawn and night modes. Each with their own settings. The program will slowly 
+change from one to the other when the light changes.
+
+When your done, stop the program and shutdown the Pi.
