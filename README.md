@@ -335,10 +335,10 @@ Some places to look for issues:
 ## Screenshots
 
 Connect to Pi Wifi
-![Pi Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/wifi_connect.PNG =50x)
+<img alt="Pi Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/wifi_connect.PNG" width="50px" />
 
 Connect to Browser
-![Browser Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/browser_connect.PNG =100x)
+<img alt="Browser Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/browser_connect.PNG" width="100px" />
 
 Home Page
 ![Home Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/home_page.PNG =200x)
