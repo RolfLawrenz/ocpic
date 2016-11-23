@@ -31,6 +31,12 @@ You will also need a power source to power your Pi.
 
 When setting up your Pi you will need a HDMI monitor, keyboard and mouse.
 
+If you want a **LED**, connect it to GPIO PIN 18
+
+Connect the **Proximity Sensor** to GPIO PIN 7. Note my proximity sensor needs 5V. 
+
+Connect the **Vibration Sensor** to GPIO PIN 23 
+
 ## Setting up software for your Pi
 
 ### OS
@@ -181,7 +187,7 @@ ignore_broadcast_ssid=0
 
 ### Nginx Passenger module
 
-Install Nginx with Passenger. I install it in the **/opt/nginx** folder
+Install Nginx with Passenger. I installed it in the **/opt/nginx** folder
 
 ~~~
 $ sudo passenger-install-nginx-module
@@ -326,4 +332,64 @@ Some places to look for issues:
 - Check status of nginx. You may need to kill nginx if it doesnt shutdown properly.
 - syslog found in **/var/log/syslog** 
 
+## Screenshots
+
+Connect to Pi Wifi
+![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/wifi_connect.PNG)
+
+Connect to Browser
+![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/browser_connect.PNG)
+
+Home Page
+![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/home_page.PNG)
+
+Camera Page
+![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/camera_page.PNG)
+
+Program Page
+![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/program_page.PNG)
+
+Settings Page
+![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/settings_page.PNG)
+
+Photos Page
+![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/photos_page.PNG)
+
+Pi Page
+![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/pi_page.PNG)
+
+Sensors Page
+![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/sensors_page.PNG)
+
+
 ## Using OCPIC
+
+The first time you open OCPIC it will show you the **Home page**. The menu is at the bottom. Also on the home page
+you can click the 'pi' icon to go to the Pi Page, or the 'sensors' icon to go to the Sensors page.
+
+The home page will show you if a program is running, and how many photos are taken on the camera.
+
+The **Pi page** displays the health and state of the Pi. You can also shutdown the Pi here.
+
+The **Sensors page** allows you to test the sensors. Click the "Poll" button then test the sensors. If the sensors are working
+you should see the sensors count increase. The Poll will stop after a minute.
+
+Also if you have a LED (GPIO PIN 18) you can test it on this page also.
+
+The **Camera page** allows you to control the camera settings. You can view and set the camera settings. Some settings are read only.
+
+The **Program page** allows you to set a program to run. You have the option of running a time-lapse program or the sensors program.
+
+The timelapse program allows you to change the interval time between photos. This is not the delay between photos but the
+time of one photo to the next. For example if interval is 10 seconds and your photo takes 6 seconds, it will wait 4 seconds
+before it takes the next photo. Timelapse has two modes to choose from, each with their own settings.
+
+The sensor program you can configure which sensors are enabled. Also the time delay between photos.
+
+Startup settings are configured on the Settings page.
+
+On the **Photos page** you can view all the photos on the camera as a thumbnail.
+
+The **Settings Page** is for the programs. You can set the camera start settings. Also you can select the best
+camera settings for the time of day, based on lighting. There is a day, dusk/dawn and night modes. Each with their
+own settings. The program will slowly change from one to the other when the light changes.
