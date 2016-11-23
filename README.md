@@ -24,7 +24,7 @@ You will need a Wifi Dongle to make your Pi a wifi hotspot. I used a Realtek RTL
 
 You will need a DSLR and a USB cable to connect your camera to the Raspberry Pi.
 
-If you want your camera to take photos of those critters eating your garbage, you will a proximity sensor and/or a vibration sensor.
+If you want your camera to take photos of those critters eating your garbage, you will need a proximity sensor and/or a vibration sensor.
 I got mine from Amazon, but I dont think it matters which brand or type. The software can help you test the sensors also.
 
 You will also need a power source to power your Pi.
@@ -303,7 +303,7 @@ $ RAILS_ENV=production bundle exec rake db:migrate
 
 ## Testing the project
 
-Once you have all hardware connected and on. And installed all software you are ready to test.
+Once you have all hardware connected and on, and installed all software you are ready to test.
 
 The Pi has a static address of **192.168.42.1**, but initially you may want to connect the ethernet cable to your Pi.
  
@@ -314,7 +314,7 @@ $ hostname -I
 192.168.1.89 192.168.42.1 192.168.1.1
 ~~~
 
-On another machine, you should be able to connect to the Pi using your internal network. This will be the **192.168.1.89**
+On another machine, you should be able to connect to the Pi using your home network. This will be the **192.168.1.89**
 IP address. In your browser type: **http://192.168.1.89** or whatever your IP address is set to.
 You should be able to see the OCPIC project in your browser.
 
