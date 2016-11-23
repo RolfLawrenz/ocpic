@@ -334,14 +334,18 @@ Some places to look for issues:
 
 ## Screenshots
 
-Connect to Pi Wifi
-<img alt="Pi Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/wifi_connect.PNG" width="50px" />
-
-Connect to Browser
-<img alt="Browser Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/browser_connect.PNG" width="100px" />
-
-Home Page
-![Home Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/home_page.PNG =200x)
+<table>
+  <tr>
+    <td>Connect to Pi Wifi</td>
+    <td>Connect to Browser</td>
+    <td>Home Page</td>
+  </tr>
+  <tr>
+    <td><img alt="Pi Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/wifi_connect.PNG" width="300px" /></td>
+    <td><img alt="Broswer Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/browser_connect.PNG" width="300px" /></td>
+    <td><img alt="Home Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/home_page.PNG" width="300px" /></td>
+  </tr>
+</table>
 
 Camera Page
 ![Camera Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/camera_page.PNG = 300x)
