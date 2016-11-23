@@ -3,7 +3,7 @@
 The Outdoor Camera Pi Controller (OCPIC) is a raspberry Pi project which controls your DSLR for timelapse photography 
 and camera sensor trap photography.
 
-This project is the software part of the project. This project enables your smart phone to control you Pi remotely.
+This project is the software part of the project. It is written in Ruby. This project enables your smart phone to control you Pi remotely.
 You can do the following with this software project:
 - control the Pi remotely using your smart phone
 - the Pi will act as a wifi hot spot
@@ -335,31 +335,31 @@ Some places to look for issues:
 ## Screenshots
 
 Connect to Pi Wifi
-![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/wifi_connect.PNG)
+![Pi Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/wifi_connect.PNG =50x)
 
 Connect to Browser
-![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/browser_connect.PNG)
+![Browser Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/browser_connect.PNG =100x)
 
 Home Page
-![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/home_page.PNG)
+![Home Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/home_page.PNG =200x)
 
 Camera Page
-![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/camera_page.PNG)
+![Camera Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/camera_page.PNG = 300x)
 
 Program Page
-![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/program_page.PNG)
+![Program Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/program_page.PNG)
 
 Settings Page
-![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/settings_page.PNG)
+![Settings Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/settings_page.PNG)
 
 Photos Page
-![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/photos_page.PNG)
+![Photos Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/photos_page.PNG)
 
 Pi Page
-![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/pi_page.PNG)
+![Pi Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/pi_page.PNG)
 
 Sensors Page
-![alt tag](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/sensors_page.PNG)
+![Sensors Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/sensors_page.PNG)
 
 
 ## Using OCPIC
