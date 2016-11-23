@@ -345,6 +345,7 @@ Some places to look for issues:
     <td><img alt="Broswer Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/browser_connect.PNG" width="300px" /></td>
     <td><img alt="Home Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/home_page.PNG" width="300px" /></td>
   </tr>
+  <tr><td colspan=3>&nbsp;</td></tr>
   <tr>
     <td>Camera Page</td>
     <td>Program Page</td>
@@ -355,6 +356,7 @@ Some places to look for issues:
     <td><img alt="Program Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/program_page.PNG" width="300px" /></td>
     <td><img alt="Settings Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/settings_page.PNG" width="300px" /></td>
   </tr>
+  <tr><td colspan=3>&nbsp;</td></tr>
   <tr>
     <td>Photos Page</td>
     <td>Pi Page</td>
