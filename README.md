@@ -345,26 +345,27 @@ Some places to look for issues:
     <td><img alt="Broswer Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/browser_connect.PNG" width="300px" /></td>
     <td><img alt="Home Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/home_page.PNG" width="300px" /></td>
   </tr>
+  <tr>
+    <td>Camera Page</td>
+    <td>Program Page</td>
+    <td>Settings Page</td>
+  </tr>
+  <tr>
+    <td><img alt="Camera Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/camera_page.PNG" width="300px" /></td>
+    <td><img alt="Program Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/program_page.PNG" width="300px" /></td>
+    <td><img alt="Settings Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/settings_page.PNG" width="300px" /></td>
+  </tr>
+  <tr>
+    <td>Photos Page</td>
+    <td>Pi Page</td>
+    <td>Sensors Page</td>
+  </tr>
+  <tr>
+    <td><img alt="Photos Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/photos_page.PNG" width="300px" /></td>
+    <td><img alt="Pi Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/pi_page.PNG" width="300px" /></td>
+    <td><img alt="Sensors Page" src="https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/sensors_page.PNG" width="300px" /></td>
+  </tr>
 </table>
-
-Camera Page
-![Camera Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/camera_page.PNG = 300x)
-
-Program Page
-![Program Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/program_page.PNG)
-
-Settings Page
-![Settings Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/settings_page.PNG)
-
-Photos Page
-![Photos Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/photos_page.PNG)
-
-Pi Page
-![Pi Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/pi_page.PNG)
-
-Sensors Page
-![Sensors Page](https://raw.githubusercontent.com/RolfLawrenz/ocpic/master/public/images/screenshots/sensors_page.PNG)
-
 
 ## Using OCPIC
 
