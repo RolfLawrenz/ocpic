@@ -49,3 +49,8 @@ $(document).on 'change', '.camera_setting_range', (evt) ->
     }
     error: (data) ->
       alert('ERROR attempting to set '+data.responseText)
+
+$(document).on 'click', '#take_photo_btn', (evt) ->
+  $.ajax '/camera/take_photo',
+    type: 'POST'
+    dataType: 'text'

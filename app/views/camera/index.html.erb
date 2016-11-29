@@ -1,3 +1,8 @@
+<br/>
+<%= link_to('TAKE PHOTO', '#', id:'take_photo_btn', class: "btn btn-positive btn-outlined action_btn") %>
+<br/>
+<br/>
+
 <%= form_tag id:'camera_form', :controller => 'camera', :action => 'index', :method => 'get' do %>
   <% @all_settings.sort_by{|s| s[:name]}.each do |menu| %>
     <h3 class="table-view-divider"><%= menu[:name] %></h3>

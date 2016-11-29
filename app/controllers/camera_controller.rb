@@ -39,6 +39,11 @@ class CameraController < ApplicationController
     render plain: return_str, status: status
   end
 
+  def take_photo
+    camera = Camera::CameraManager.instance.camera
+    camera.capture_photo
+  end
+
   private
 
   def save_setting(param_name, db_name)
