@@ -34,9 +34,6 @@ module Camera
       begin
         puts "---------- CONNECTING TO CAMERA -------"
         init_camera
-        @exp_comp_choices = field_choices(['capturesettings','exposurecompensation'])
-        @f_number_choices = field_choices(['capturesettings','f-number'])
-        @iso_choices = field_choices(['imgsettings','iso'])
       rescue Exception => e
         #  No Camera, try again later
         puts "ERROR: #{e.message}"
@@ -270,7 +267,7 @@ module Camera
     end
 
     def capture_photo
-      Rails.logger.info("##{@capture_count} Capture Photo")
+      Rails.logger.info("##{@capture_count} Capture Photo - ev=#{ev}")
       # puts("##{@capture_count} Capture Photo")
       @capture_count += 1
       @camera.capture
@@ -315,12 +312,20 @@ module Camera
       end
     end
 
-    def field_choices(field_tree)
+    def field_choices(field_name)
       widget = @camera.window
-      field_tree.each do |field|
-        widget = widget.children.select{|c| c.name == field }[0]
+      widget.children.each do |section|
+        section.children.each do |field|
+          if field.name == field_name
+            return field.choices
+          end
+        end
       end
-      widget.choices
+      nil
+    end
+
+    def field_index_of(name, value)
+      field_choices(name).index(value)
     end
 
     def show_all_settings

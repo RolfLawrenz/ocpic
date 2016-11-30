@@ -1,0 +1,12 @@
+<h4>Sensors Time</h4>
+<%= form_tag id:'settings_form', :controller => 'settings', :action => 'sensors_time', :method => 'get' do %>
+  <% Program::BaseProgram::TIME_MODES.each do |time_mode| %>
+    <h5 class="content-padded"><%= time_mode %></h5>
+    <% @time_settings[time_mode].sort_by{|f| f[:name]}.each do |field| %>
+      <div class="input-row">
+        <%= setting_label_field(SettingsController::SENSORS_STR, field, @shooting_mode, time_mode) %>
+        <%= setting_setting_field(SettingsController::SENSORS_STR, field, @shooting_mode, time_mode) %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,6 +1,6 @@
 class SettingsController < ApplicationController
 
-  TIMELAPSE_SELECTED_SETTINGS = [
+  TIME_SELECTED_SETTINGS = [
       'exposurecompensation',
       'expprogram',
       'f-number',
@@ -58,6 +58,8 @@ class SettingsController < ApplicationController
   TIMELAPSE_STR = ProgramController::PROGRAM_NAMES[:Timelapse]
   SENSORS_STR = ProgramController::PROGRAM_NAMES[:Sensors]
 
+  SENSOR_SHOOTING_MODE = 'Normal'
+
   def index
     @timelapse_modes = ProgramController::TIMELAPSE_MODES.values
 
@@ -67,9 +69,9 @@ class SettingsController < ApplicationController
     @shooting_mode = params['shooting_mode']
     @back_path = settings_index_path
     if Camera::CameraManager.instance.connected?
-      @timelapse_settings = {}
-      Program::TimelapseProgram::TIME_MODES.each do |time_mode|
-        @timelapse_settings[time_mode] = SettingsController.timelapse_settings(@shooting_mode, time_mode)
+      @time_settings = {}
+      Program::BaseProgram::TIME_MODES.each do |time_mode|
+        @time_settings[time_mode] = SettingsController.time_settings(@shooting_mode, time_mode, TIMELAPSE_STR)
       end
       render :timelapse_mode
     else
@@ -89,25 +91,40 @@ class SettingsController < ApplicationController
   end
 
   def sensors_start
+    @shooting_mode = SENSOR_SHOOTING_MODE
     @back_path = settings_index_path
     if Camera::CameraManager.instance.connected?
-      @start_settings = SettingsController.start_settings(SENSORS_STR, '')
+      @start_settings = SettingsController.start_settings(SENSORS_STR, @shooting_mode)
       render :sensors_start
     else
       render "camera/not_connected"
     end
   end
 
-  def self.timelapse_settings(shooting_mode, time_mode)
+  def sensors_time
+    @shooting_mode = SENSOR_SHOOTING_MODE
+    @back_path = settings_index_path
+    if Camera::CameraManager.instance.connected?
+      @time_settings = {}
+      Program::BaseProgram::TIME_MODES.each do |time_mode|
+        @time_settings[time_mode] = SettingsController.time_settings(@shooting_mode, time_mode, SENSORS_STR)
+      end
+      render :sensors_time
+    else
+      render "camera/not_connected"
+    end
+  end
+
+  def self.time_settings(shooting_mode, time_mode, program_str)
     camera = Camera::CameraManager.instance.camera
 
     settings = []
-    TIMELAPSE_SELECTED_SETTINGS.each do |selected_setting|
+    TIME_SELECTED_SETTINGS.each do |selected_setting|
       camera_setting = camera.selected_setting(selected_setting)
       settings << {
         name: selected_setting,
         type: camera_setting[:type],
-        value: ProgramController.find_or_create_setting_value(setting_db_name(TIMELAPSE_STR, shooting_mode, time_mode, selected_setting), ''),
+        value: ProgramController.find_or_create_setting_value(setting_db_name(program_str, shooting_mode, time_mode, selected_setting), ''),
         options: camera_setting[:options]
       }
     end
@@ -158,6 +175,5 @@ class SettingsController < ApplicationController
     setting.value = value
     setting.save
   end
-
 
 end

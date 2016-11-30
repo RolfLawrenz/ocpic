@@ -2,8 +2,8 @@
 <%= form_tag id:'settings_form', :controller => 'settings', :action => 'sensors_start', :method => 'get' do %>
   <% @start_settings.sort_by{|f| f[:name]}.each do |field| %>
     <div class="input-row">
-      <%= setting_label_field(SettingsController::SENSORS_STR, field, '', 'start') %>
-      <%= setting_setting_field(SettingsController::SENSORS_STR, field, '', 'start') %>
+      <%= setting_label_field(SettingsController::SENSORS_STR, field, SettingsController::SENSOR_SHOOTING_MODE, 'start') %>
+      <%= setting_setting_field(SettingsController::SENSORS_STR, field, SettingsController::SENSOR_SHOOTING_MODE, 'start') %>
     </div>
   <% end %>
 <% end %>

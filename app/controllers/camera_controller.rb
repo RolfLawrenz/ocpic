@@ -42,6 +42,8 @@ class CameraController < ApplicationController
   def take_photo
     camera = Camera::CameraManager.instance.camera
     camera.capture_photo
+
+    render plain: "ok", status: status
   end
 
   private
