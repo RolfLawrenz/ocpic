@@ -195,6 +195,10 @@ module Camera
       @camera['expprogram'].value
     end
 
+    def manual_mode?
+      exposure_program == 'M'
+    end
+
     # Value meanings: https://en.wikipedia.org/wiki/Exposure_value
     # 12 - 16  - Daylight
     # 12       - Sunrise / Sunset
@@ -210,11 +214,24 @@ module Camera
     # -10      - Night, weak celestial bodies, nebulae
     # *** Takes into account exposure compensation
     def ev
+      # If in manual mode we need to temporarily convert to P mode to get accurate reading
+      was_manual = false
+      if manual_mode?
+        @camera['expprogram'] = 'P'
+        save_retry
+        was_manual = true
+      end
+
       reload
       _iso = iso.to_f
       _shutterspeed = shutterspeed_value
       _f_number = f_number_value.to_f
       _exp_comp = exposure_compensation.to_f
+
+      if was_manual
+        @camera['expprogram'] = 'M'
+        save_retry
+      end
 
       # EV = log2(100 x f-number^2 / (ISO x shutter))
       Math::log2(100 * (_f_number ** 2) / (_iso * _shutterspeed)) + _exp_comp
