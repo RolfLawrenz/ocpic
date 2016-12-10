@@ -29,8 +29,14 @@ module Camera
         'datetime'
     ]
 
-    def initialize
-      @capture_count = 0
+    TIME_MODES = [
+        'day',
+        'dusk',
+        'night'
+    ]
+
+    def initialize(capture_count = 0)
+      @capture_count = capture_count
       begin
         puts "---------- CONNECTING TO CAMERA -------"
         init_camera
@@ -162,19 +168,19 @@ module Camera
       @camera['exposurecompensation'].value
     end
 
-    def increase_field_value(field_name, values)
+    def increase_field_value(field_name, values, amount = 1)
       field_value = @camera[field_name].value
       index = values.index(field_value)
-      Rails.logger.info("increase #{field_name} (#{field_value} to #{values[index+1]})")
-      @camera[field_name] = values[index+1]
+      Rails.logger.info("--> increase #{field_name} (#{field_value} to #{values[index+amount]})")
+      @camera[field_name] = values[index+amount]
       save_retry
     end
 
-    def decrease_field_value(field_name, values)
+    def decrease_field_value(field_name, values, amount = 1)
       field_value = @camera[field_name].value
       index = values.index(field_value)
-      Rails.logger.info("decrease #{field_name} (#{field_value} to #{values[index-1]})")
-      @camera[field_name] = values[index-1]
+      Rails.logger.info("<-- decrease #{field_name} (#{field_value} to #{values[index-amount]})")
+      @camera[field_name] = values[index-amount]
       save_retry
     end
 
@@ -187,8 +193,10 @@ module Camera
         rescue
           count += 1
           Rails.logger.info("ERROR Saving - retry #{count}")
+          return false
         end
       end
+      true
     end
 
     def exposure_program
@@ -234,7 +242,18 @@ module Camera
       end
 
       # EV = log2(100 x f-number^2 / (ISO x shutter))
-      Math::log2(100 * (_f_number ** 2) / (_iso * _shutterspeed)) + _exp_comp
+      (Math::log2(100 * (_f_number ** 2) / (_iso * _shutterspeed)) + _exp_comp).round(2)
+    end
+
+    def current_time_mode
+      _ev = ev
+      if _ev < 5
+        return TIME_MODES[2]
+      elsif _ev < 12
+        return TIME_MODES[1]
+      else
+        return TIME_MODES[0]
+      end
     end
 
     def name
@@ -284,8 +303,7 @@ module Camera
     end
 
     def capture_photo
-      Rails.logger.info("##{@capture_count} Capture Photo - ev=#{ev}")
-      # puts("##{@capture_count} Capture Photo")
+      Rails.logger.info("##{@capture_count} Capture Photo (ev:#{ev} #{current_time_mode}) [iso:#{iso}, ss:#{shutterspeed}, f:#{f_number}, exp:#{exposure_compensation}, prog:#{exposure_program}]")
       @capture_count += 1
       @camera.capture
     end

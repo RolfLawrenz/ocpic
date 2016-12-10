@@ -4,12 +4,6 @@ module Program
 
     attr_accessor :name, :start_time, :end_time, :photo_count
 
-    TIME_MODES = [
-        'day',
-        'dusk',
-        'night'
-    ]
-
     def initialize(name)
       @name = name
       @photo_count = 0
@@ -82,14 +76,7 @@ module Program
     # Return what the current time mode is based on current light reading in camera
     def current_time_mode
       camera = Camera::CameraManager.instance.camera
-      ev = camera.ev
-      if ev < 5
-        return TIME_MODES[2]
-      elsif ev < 12
-        return TIME_MODES[1]
-      else
-        return TIME_MODES[0]
-      end
+      camera.current_time_mode
     end
 
     def program_str
@@ -123,13 +110,26 @@ module Program
         setting_index = setting_options.index(setting_value)
         camera_index = setting_options.index(camera_value)
 
-        puts "setting_index=#{setting_index} camera_index=#{camera_index}"
+        # puts "setting_index=#{setting_index} camera_index=#{camera_index}"
 
         Rails.logger.debug("CHANGE #{setting_name} camera:#{camera_value} setting:#{setting_value}")
         if setting_index < camera_index
-          camera.decrease_field_value(setting_name, setting_options)
+          success = camera.decrease_field_value(setting_name, setting_options)
+          # This seems strange but for some camera settings (exposure value), it wont set to certain
+          # values, like -1.333, so I will skip if it cant set the value
+          # Also reading the camera here may still give wrong value. It may say its -1.333, but its really still -1
+          new_camera_value = camera.camera[setting_name].value
+          unless success
+            offset = (new_camera_value == camera_value ? 2 : 1)
+            camera.decrease_field_value(setting_name, setting_options, offset)
+          end
         elsif setting_index > camera_index
-          camera.increase_field_value(setting_name, setting_options)
+          success = camera.increase_field_value(setting_name, setting_options)
+          new_camera_value = camera.camera[setting_name].value
+          unless success
+            offset = (new_camera_value == camera_value ? 2 : 1)
+            camera.increase_field_value(setting_name, setting_options, offset)
+          end
         end
       end
     end

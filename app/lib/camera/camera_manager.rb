@@ -22,10 +22,10 @@ module Camera
       return @camera.camera_connected?
     end
 
-    def refresh
+    def refresh(capture_count)
       @camera.shutdown
       @camera = nil
-      @camera = ::Camera::Camera.new
+      @camera = ::Camera::Camera.new(capture_count)
     end
 
   end

@@ -10,8 +10,8 @@
   font-size: 40px;
   color: rgba(76, 85, 135, 0.87);
   margin-top: 20px;
-  margin-bottom: 20px;
-  line-height: 50px;
+  margin-bottom: 10px;
+  line-height: 40px;
 }
 
 .shutdown_pi_header {
@@ -22,4 +22,12 @@
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.version {
+  text-align: center;
+  font-size: 15px;
+  color: rgba(76, 85, 135, 0.87);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

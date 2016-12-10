@@ -7,8 +7,10 @@ class HomeController < ApplicationController
     if Camera::CameraManager.instance.connected?
       camera = Camera::CameraManager.instance.camera
       @photo_count = camera.photo_count
+      @camera_active = true
     else
       @photo_count = 0
+      @camera_active = false
     end
 
   end

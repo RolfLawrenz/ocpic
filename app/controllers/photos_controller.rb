@@ -5,7 +5,6 @@ class PhotosController < ApplicationController
   def index
     if Camera::CameraManager.instance.connected?
 
-      Camera::CameraManager.instance.refresh
       camera = Camera::CameraManager.instance.camera
       prepare_photos(camera)
 

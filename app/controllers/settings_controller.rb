@@ -70,7 +70,7 @@ class SettingsController < ApplicationController
     @back_path = settings_index_path
     if Camera::CameraManager.instance.connected?
       @time_settings = {}
-      Program::BaseProgram::TIME_MODES.each do |time_mode|
+      Camera::Camera::TIME_MODES.each do |time_mode|
         @time_settings[time_mode] = SettingsController.time_settings(@shooting_mode, time_mode, TIMELAPSE_STR)
       end
       render :timelapse_mode
@@ -106,7 +106,7 @@ class SettingsController < ApplicationController
     @back_path = settings_index_path
     if Camera::CameraManager.instance.connected?
       @time_settings = {}
-      Program::BaseProgram::TIME_MODES.each do |time_mode|
+      Camera::Camera::TIME_MODES.each do |time_mode|
         @time_settings[time_mode] = SettingsController.time_settings(@shooting_mode, time_mode, SENSORS_STR)
       end
       render :sensors_time

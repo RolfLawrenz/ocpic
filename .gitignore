@@ -25,3 +25,5 @@ tmp
 .DS_Store
 *.NEF
 /public/assets
+*.gz
+

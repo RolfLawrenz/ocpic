@@ -1,6 +1,6 @@
 <h4>Sensors Time</h4>
 <%= form_tag id:'settings_form', :controller => 'settings', :action => 'sensors_time', :method => 'get' do %>
-  <% Program::BaseProgram::TIME_MODES.each do |time_mode| %>
+  <% Camera::Camera::TIME_MODES.each do |time_mode| %>
     <h5 class="content-padded"><%= time_mode %></h5>
     <% @time_settings[time_mode].sort_by{|f| f[:name]}.each do |field| %>
       <div class="input-row">

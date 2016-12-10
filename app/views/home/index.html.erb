@@ -1,8 +1,8 @@
 <p class="home_ocpic"><b>O</b>utdoor <b>C</b>amera <b>Pi</b> <b>C</b>ontroller</p>
-
+<p class="version">Version: <%= APP_VERSION %></p>
 <table width="100%">
   <tr>
-    <td class="home_image"><%= link_to image_tag('home_camera_active.png', width: 75), camera_index_path, class: 'home_main_image' %></td>
+    <td class="home_image"><%= link_to image_tag("home_camera_#{@camera_active ? 'active' : 'dead'}.png", width: 75), camera_index_path, class: 'home_main_image' %></td>
     <td class="home_image"><%= link_to image_tag('home_pi_active.png', width: 75), pi_index_path, class: 'home_main_image' %></td>
     <td class="home_image"><%= link_to image_tag('home_sensors_active.png', width: 75), sensors_index_path, class: 'home_main_image' %></td>
   </tr>
