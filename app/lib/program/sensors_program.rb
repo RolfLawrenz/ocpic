@@ -14,7 +14,7 @@ module Program
 
       @sensor_proximity_value = ProgramController.find_or_create_setting_value(Setting::NAME_SENSOR_PROXIMITY, "1")
       @sensor_vibration_value = ProgramController.find_or_create_setting_value(Setting::NAME_SENSOR_VIBRATION, "1")
-      @time_between_photos    = ProgramController.find_or_create_setting_value(Setting::NAME_SENSOR_TIME_BETWEEN_PHOTOS, "1").to_i
+      @time_between_photos    = ProgramController.find_or_create_setting_value(Setting::NAME_SENSOR_TIME_BETWEEN_PHOTOS, "1").to_f
  
       # Run loop to trigger on sensors and take photo
       @last_photo_time = Time.now - @time_between_photos

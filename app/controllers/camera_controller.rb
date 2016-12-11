@@ -40,10 +40,11 @@ class CameraController < ApplicationController
   end
 
   def take_photo
+    Rails.logger.debug("TAKE PHOTO")
     camera = Camera::CameraManager.instance.camera
     camera.capture_photo
 
-    render plain: "ok", status: status
+    render plain: "ok", status: :ok
   end
 
   private
