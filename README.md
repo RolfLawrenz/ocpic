@@ -301,6 +301,11 @@ $ RAILS_ENV=production bundle exec rake db:create
 $ RAILS_ENV=production bundle exec rake db:migrate
 ~~~
 
+For deploying and if you ever change the javascript or style sheets you will need to precompile the assets to take effect:
+~~~
+$ RAILS_ENV=production bundle exec rake assets:precompile
+~~~
+
 ## Testing the project
 
 Once you have all hardware connected and on, and installed all software you are ready to test.
