@@ -35,6 +35,12 @@ module Camera
         'night'
     ]
 
+    DUSK_NIGHT_EV = 5.0
+    DAY_DUSK_EV = 12.0
+
+    # Buffer for switching from oe day mode to another
+    EV_BUFFER = 0.5
+
     def initialize(capture_count = 0)
       @capture_count = capture_count
       begin
@@ -247,13 +253,41 @@ module Camera
 
     def current_time_mode
       _ev = ev
-      if _ev < 5
-        return TIME_MODES[2]
-      elsif _ev < 12
-        return TIME_MODES[1]
-      else
-        return TIME_MODES[0]
+      # Allow a buffer so it doesnt dither between values
+      @previous_time_mode ||= TIME_MODES[0]
+
+      # If Day
+      if @previous_time_mode == TIME_MODES[0]
+        if _ev < DUSK_NIGHT_EV
+          @previous_time_mode = TIME_MODES[2]
+        elsif _ev < (DAY_DUSK_EV - EV_BUFFER)
+          @previous_time_mode = TIME_MODES[1]
+        else
+          @previous_time_mode = TIME_MODES[0]
+        end
+
+      # If Dusk
+      elsif @previous_time_mode == TIME_MODES[1]
+        if _ev < (DUSK_NIGHT_EV - EV_BUFFER)
+          @previous_time_mode = TIME_MODES[2]
+        elsif _ev < (DAY_DUSK_EV + EV_BUFFER)
+          @previous_time_mode = TIME_MODES[1]
+        else
+          @previous_time_mode = TIME_MODES[0]
+        end
+
+      # If Night
+      elsif @previous_time_mode == TIME_MODES[2]
+        if _ev < (DUSK_NIGHT_EV + EV_BUFFER)
+          @previous_time_mode = TIME_MODES[2]
+        elsif _ev < DAY_DUSK_EV
+          @previous_time_mode = TIME_MODES[1]
+        else
+          @previous_time_mode = TIME_MODES[0]
+        end
       end
+
+      @previous_time_mode
     end
 
     def name
